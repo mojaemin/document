@@ -525,13 +525,82 @@ section {
   text-decoration: none;
 }
 
-/* Responsive */
+/* ─── 반응형: 태블릿 (1024px 이하) ─── */
+@media (max-width: 1024px) {
+  .container { padding: 0 1rem; }
+  section { padding: 3rem 0; }
+  .cat-grid { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+  .schedule-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .hero-meta { gap: 1rem; }
+  .arch-layer { padding: 1.2rem 1.5rem; gap: 1rem; }
+}
+
+/* ─── 반응형: 모바일 (768px 이하) ─── */
 @media (max-width: 768px) {
-  .cat-grid { grid-template-columns: 1fr; }
-  .top10-list { grid-template-columns: 1fr; }
-  .arch-layer { flex-direction: column; gap: 0.75rem; }
+  section { padding: 2rem 0; }
+  .hero { min-height: 80vh; padding: 2rem 1.2rem; }
+  .hero-sub { margin-bottom: 1.5rem; }
+  .hero-meta { gap: 0.6rem; flex-direction: column; align-items: center; }
+  .hero-meta-item { font-size: 0.75rem; }
+  .hero-meta-item strong { font-size: 0.82rem; }
+  .section-header { margin-bottom: 2rem; }
+  .section-desc { font-size: 0.9rem; }
+  .cat-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .cat-card-header { padding: 1.2rem 1rem 0.8rem; }
+  .cat-card-header h3 { font-size: 1rem; }
+  .cat-table th { padding: 0.5rem 0.8rem; font-size: 0.6rem; }
+  .cat-table td { padding: 0.55rem 0.8rem; font-size: 0.78rem; }
+  .cat-tip { padding: 0.8rem 1rem; font-size: 0.75rem; }
+  .top10-list { grid-template-columns: 1fr; gap: 0.8rem; }
+  .top10-item { padding: 1rem 1.2rem; }
+  .top10-rank { font-size: 1.5rem; }
+  .arch-layer { flex-direction: column; gap: 0.75rem; padding: 1rem 1.2rem; }
   .arch-label { min-width: auto; }
-  .nav-btn { padding: 0.8rem 0.8rem; font-size: 0.75rem; }
+  .arch-chip { font-size: 0.72rem; padding: 0.3rem 0.6rem; }
+  .schedule-grid { grid-template-columns: 1fr; }
+  .schedule-card { padding: 1.5rem; }
+  .nav { -webkit-overflow-scrolling: touch; }
+  .nav-btn { padding: 0.8rem 0.7rem; font-size: 0.73rem; }
+  .footer { padding: 2rem 0; }
+}
+
+/* ─── 반응형: 소형 모바일 (480px 이하) ─── */
+@media (max-width: 480px) {
+  .hero { min-height: 70vh; padding: 1.5rem 1rem; }
+  .hero-badge { font-size: 0.65rem; padding: 0.3rem 0.8rem; }
+  .container { padding: 0 0.8rem; }
+  .cat-card-header { gap: 0.7rem; }
+  .cat-icon { width: 40px; height: 40px; font-size: 1.2rem; border-radius: 10px; }
+  .cat-table th { padding: 0.4rem 0.6rem; }
+  .cat-table td { padding: 0.45rem 0.6rem; font-size: 0.73rem; }
+  .company-name { font-size: 0.78rem; }
+  .company-product, .company-apply { font-size: 0.72rem; }
+  .top10-item { gap: 0.7rem; padding: 0.9rem 1rem; }
+  .top10-rank { font-size: 1.3rem; min-width: 28px; }
+  .top10-info h4 { font-size: 0.88rem; }
+  .top10-info p { font-size: 0.73rem; }
+  .nav-btn { padding: 0.7rem 0.5rem; font-size: 0.68rem; }
+  .schedule-card { padding: 1.2rem; }
+  .schedule-card h4 { font-size: 1rem; }
+  .schedule-card p { font-size: 0.8rem; }
+}
+
+/* ─── 터치 디바이스: hover 효과 제거 ─── */
+@media (hover: none) and (pointer: coarse) {
+  .cat-card:hover { border-color: var(--border); transform: none; box-shadow: none; }
+  .top10-item:hover { border-color: var(--border); transform: none; }
+  .schedule-card:hover { border-color: var(--border); transform: none; }
+  .cat-table tr:hover td { background: none; }
+}
+
+/* ─── 인쇄 ─── */
+@media print {
+  .nav { display: none; }
+  .hero { min-height: auto; padding: 2rem; }
+  .hero-grid, .hero::before { display: none; }
+  body { background: #fff; color: #222; }
+  .cat-card, .top10-item, .schedule-card, .arch-layer { border-color: #ccc; }
+  section { page-break-inside: avoid; }
 }
 </style>
 </head>
