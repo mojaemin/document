@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>AW2026 참가업체 심층 조사 보고서</title>
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#1A478A">
@@ -39,12 +39,19 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
     body {
       font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.7;
       font-size: 15px;
+      padding-left: env(safe-area-inset-left);
+      padding-right: env(safe-area-inset-right);
     }
 
     /* ─── 표지 ─── */
@@ -441,11 +448,6 @@
 
     /* ─── 반응형: 모바일 (max 768px) ─── */
     @media (max-width: 768px) {
-      html {
-        scroll-behavior: smooth;
-        -webkit-text-size-adjust: 100%;
-      }
-
       body {
         font-size: 14px;
         line-height: 1.6;
@@ -795,12 +797,207 @@
       }
     }
 
+    /* ─── 햄버거 메뉴 버튼 ─── */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.75rem 1rem;
+      flex-shrink: 0;
+      min-height: 44px;
+      min-width: 44px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text);
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    .nav-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .nav-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .nav-brand {
+      display: none;
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 0.9rem;
+      padding: 0.75rem 0;
+      white-space: nowrap;
+    }
+
+    .nav-top {
+      display: none;
+    }
+
+    /* ─── 맨 위로 버튼 ─── */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 1.5rem;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      z-index: 99;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    /* ─── 모바일: 햄버거 드로어 네비게이션 ─── */
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: flex;
+      }
+
+      .nav-brand {
+        display: block;
+      }
+
+      .nav-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 0.5rem;
+      }
+
+      .nav-inner {
+        display: flex;
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+        padding: 0 0.5rem;
+      }
+
+      .nav-inner.open {
+        max-height: 500px;
+        padding-bottom: 0.5rem;
+      }
+
+      .nav-inner a {
+        padding: 0.65rem 1rem;
+        border-bottom: none;
+        border-left: 3px solid transparent;
+        font-size: 0.85rem;
+        border-radius: 6px;
+      }
+
+      .nav-inner a:hover,
+      .nav-inner a.active {
+        background: var(--bg);
+        border-left-color: var(--primary);
+        color: var(--primary);
+      }
+
+      .back-to-top {
+        bottom: 1.2rem;
+        right: 1rem;
+        bottom: calc(1.2rem + env(safe-area-inset-bottom));
+      }
+    }
+
+    /* ─── 다크 모드 ─── */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1A202C;
+        --card: #2D3748;
+        --text: #E2E8F0;
+        --text-light: #A0AEC0;
+        --border: #4A5568;
+        --row-alt: #2A3444;
+        --tag-blue: #2A4365;
+        --tag-green: #22543D;
+        --tag-orange: #744210;
+        --tag-purple: #44337A;
+        --tag-red: #742A2A;
+      }
+
+      .tag-blue { color: #90CDF4; }
+      .tag-green { color: #9AE6B4; }
+      .tag-orange { color: #FBD38D; }
+      .tag-purple { color: #D6BCFA; }
+      .tag-red { color: #FEB2B2; }
+      .tag-confirmed { background: #276749; color: #C6F6D5; }
+
+      .nav {
+        background: #2D3748;
+        border-bottom-color: #4A5568;
+      }
+
+      .nav-toggle span {
+        background: var(--text);
+      }
+
+      tbody tr:hover { background: #3A4556; }
+
+      .overview-card,
+      .trend-card,
+      .card-item {
+        background: #1A202C;
+      }
+
+      .compare-table td:first-child {
+        background: #2A4365;
+      }
+
+      .cover {
+        background: linear-gradient(135deg, #0A1628 0%, #1A478A 40%, #2B6CC4 100%);
+      }
+
+      #install-banner {
+        background: linear-gradient(135deg, #0F2D5E, #1A478A) !important;
+      }
+
+      .back-to-top {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      }
+    }
+
     /* ─── 인쇄 ─── */
     @media print {
 
       .nav,
       .card-list,
-      #install-banner {
+      #install-banner,
+      .back-to-top {
         display: none !important;
       }
 
@@ -841,8 +1038,14 @@
   </div>
 
   <!-- ═══════════════ 네비게이션 ═══════════════ -->
-  <nav class="nav">
-    <div class="nav-inner">
+  <nav class="nav" id="main-nav">
+    <div class="nav-top">
+      <span class="nav-brand">AW2026 보고서</span>
+      <button class="nav-toggle" id="nav-toggle" aria-label="메뉴 열기/닫기">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-inner" id="nav-inner">
       <a href="#overview">개요</a>
       <a href="#s1">1.그리퍼</a>
       <a href="#s2">2.로봇팔</a>
@@ -851,7 +1054,7 @@
       <a href="#s5">5.AI선별</a>
       <a href="#s6">6.비전</a>
       <a href="#s7">7.PLC</a>
-      <a href="#trends">트렌드a>
+      <a href="#trends">트렌드</a>
     </div>
   </nav>
 
@@ -2420,6 +2623,7 @@
     </footer>
 
   </div>
+  <button class="back-to-top" id="back-to-top" aria-label="맨 위로">&#9650;</button>
   <div id="install-banner"
     style="display:none;position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,#1A478A,#2B6CC4);color:#fff;padding:1rem 1.5rem;z-index:10000;box-shadow:0 -2px 10px rgba(0,0,0,0.2);font-family:'Noto Sans KR',sans-serif;">
     <div style="display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;">
@@ -2560,18 +2764,48 @@
     window.addEventListener('resize', buildCards);
     window.addEventListener('scroll', updateNav, { passive: true });
 
-    // 부드러운 스크롤 (nav 높이 보정)
+    // 햄버거 메뉴 토글
+    const navToggle = document.getElementById('nav-toggle');
+    const navInner = document.getElementById('nav-inner');
+    if (navToggle && navInner) {
+      navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('active');
+        navInner.classList.toggle('open');
+      });
+    }
+
+    // 부드러운 스크롤 (nav 높이 보정) + 모바일 메뉴 닫기
     document.querySelectorAll('.nav a').forEach(a => {
       a.addEventListener('click', e => {
         const href = a.getAttribute('href');
         const target = document.querySelector(href);
         if (target) {
           e.preventDefault();
+          // 모바일: 메뉴 닫기
+          if (navToggle && navInner) {
+            navToggle.classList.remove('active');
+            navInner.classList.remove('open');
+          }
           const navH = document.querySelector('.nav').offsetHeight;
           window.scrollTo({ top: target.offsetTop - navH - 8, behavior: 'smooth' });
         }
       });
     });
+
+    // 맨 위로 버튼
+    const backToTop = document.getElementById('back-to-top');
+    if (backToTop) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 600) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      }, { passive: true });
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
   </script>
 </body>
 
