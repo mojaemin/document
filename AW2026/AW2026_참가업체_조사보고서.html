@@ -31,6 +31,11 @@
       --tag-orange: #FFFAF0;
       --tag-purple: #FAF5FF;
       --tag-red: #FFF5F5;
+      --nav-bg: #FFFFFF;
+      --nav-fade-color: white;
+      --card-item-bg: var(--bg);
+      --container-max: 1200px;
+      --touch-min: 44px;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -45,6 +50,7 @@
       font-size: 15px;
       padding-left: env(safe-area-inset-left);
       padding-right: env(safe-area-inset-right);
+      padding-bottom: env(safe-area-inset-bottom);
     }
 
     /* ─── 표지 ─── */
@@ -131,7 +137,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: white;
+      background: var(--nav-bg);
       border-bottom: 1px solid var(--border);
       box-shadow: 0 2px 10px rgba(0,0,0,0.06);
     }
@@ -155,19 +161,19 @@
 
     .nav-scroll-wrap .fade-left {
       left: 0;
-      background: linear-gradient(to right, white 30%, transparent);
+      background: linear-gradient(to right, var(--nav-fade-color) 30%, transparent);
     }
 
     .nav-scroll-wrap .fade-right {
       right: 0;
-      background: linear-gradient(to left, white 30%, transparent);
+      background: linear-gradient(to left, var(--nav-fade-color) 30%, transparent);
     }
 
     .nav-scroll-wrap .fade-left.show,
     .nav-scroll-wrap .fade-right.show { opacity: 1; }
 
     .nav-inner {
-      max-width: 1400px;
+      max-width: var(--container-max);
       margin: 0 auto;
       display: flex;
       gap: 0;
@@ -179,7 +185,9 @@
     .nav-inner::-webkit-scrollbar { display: none; }
 
     .nav a {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      min-height: var(--touch-min);
       padding: 1rem 1.1rem;
       text-decoration: none;
       color: var(--text-light);
@@ -198,7 +206,7 @@
     }
 
     /* ─── 컨테이너 ─── */
-    .container { max-width: 1400px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .container { max-width: var(--container-max); margin: 0 auto; padding: 2rem 1.5rem; }
 
     /* ─── 섹션 ─── */
     .section { margin-bottom: 3rem; }
@@ -433,6 +441,11 @@
 
     /* ─── 모바일 카드형 테이블 ─── */
     .card-list { display: none; }
+    .card-item .country {
+      font-size: 0.72rem;
+      color: var(--text-light);
+      font-weight: 400;
+    }
 
     /* ─── 반응형: 태블릿 ─── */
     @media (max-width: 1024px) {
@@ -480,12 +493,14 @@
       }
 
       .nav-drawer.open {
-        max-height: 600px;
+        max-height: 700px;
         padding-bottom: 0.5rem;
       }
 
       .nav-drawer a {
-        display: block;
+        display: flex;
+        align-items: center;
+        min-height: var(--touch-min);
         padding: 0.65rem 1rem;
         text-decoration: none;
         color: var(--text-light);
@@ -584,24 +599,64 @@
       .key-points li { font-size: 0.82rem; }
 
       .back-to-top {
-        bottom: 1.2rem;
-        right: 1rem;
         bottom: calc(1.2rem + env(safe-area-inset-bottom));
+        right: calc(1rem + env(safe-area-inset-right));
       }
     }
 
     /* ─── 소형 모바일 ─── */
-    @media (max-width: 420px) {
-      .cover { min-height: 75vh; padding: 1.5rem 1rem; }
-      .cover h1 { font-size: 2.2rem; }
-      .cover h2 { font-size: 0.9rem; }
+    @media (max-width: 480px) {
+      .cover { min-height: 80vh; padding: 1.5rem 1rem; }
+      .cover h1 { font-size: 2.4rem; }
+      .cover h2 { font-size: 0.95rem; }
       .cover-info { flex-direction: column; gap: 0.5rem; }
       .cover-info-item { text-align: center; padding: 0.6rem 0.8rem; }
-      .section-header h2 { font-size: 0.92rem; }
+      .section-header h2 { font-size: 0.95rem; }
       .overview-grid { grid-template-columns: 1fr; }
       .card-item { padding: 0.7rem 0.8rem; }
       .card-item-title { font-size: 0.82rem; }
       .card-item-row { font-size: 0.74rem; }
+      .nav-drawer a { font-size: 0.82rem; padding: 0.6rem 0.8rem; }
+      .top10-card { padding: 1rem; }
+      .schedule-card { padding: 1.2rem; }
+    }
+
+    /* ─── 초소형 모바일 ─── */
+    @media (max-width: 360px) {
+      .cover { min-height: 70vh; padding: 1.2rem 0.8rem; }
+      .cover h1 { font-size: 2rem; letter-spacing: -1px; }
+      .cover h2 { font-size: 0.85rem; }
+      .cover-badge { font-size: 0.7rem; padding: 0.3rem 0.8rem; }
+      .cover-info-item strong { font-size: 0.9rem; }
+
+      .section-header { padding: 1rem 0.8rem; }
+      .section-header h2 { font-size: 0.88rem; }
+      .section-header .section-num {
+        width: 26px; height: 26px; line-height: 26px;
+        font-size: 0.85rem; margin-right: 0.4rem;
+      }
+      .section-body { padding: 0.8rem 0.6rem; }
+
+      h3 { font-size: 0.85rem; }
+      h4 { font-size: 0.82rem; }
+
+      .card-item { padding: 0.6rem 0.7rem; }
+      .card-item-title { font-size: 0.78rem; }
+      .card-item-row { font-size: 0.7rem; }
+      .card-item-row .card-label { min-width: 44px; }
+
+      .top10-rank { font-size: 1.2rem; }
+      .top10-info .top10-name { font-size: 0.88rem; }
+      .top10-info .top10-field { font-size: 0.75rem; }
+      .top10-info .top10-reason { font-size: 0.75rem; }
+
+      .trend-card .trend-title { font-size: 0.82rem; }
+      .trend-card .trend-desc { font-size: 0.75rem; }
+
+      .key-points li { font-size: 0.78rem; }
+
+      .nav-brand { font-size: 0.82rem; }
+      .nav-drawer a { font-size: 0.78rem; padding: 0.55rem 0.7rem; }
     }
 
     /* ─── 터치 디바이스 ─── */
@@ -609,7 +664,12 @@
       tbody tr:hover { background: inherit; }
       tbody tr:nth-child(even):hover { background: var(--row-alt); }
       .trend-card:hover { transform: none; }
-      .table-wrap { scroll-snap-type: x proximity; }
+      .back-to-top:hover { transform: none; }
+      .table-wrap { scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; }
+      .nav a { min-height: var(--touch-min); }
+      .nav-drawer a { min-height: var(--touch-min); display: flex; align-items: center; }
+      .nav-toggle { min-height: var(--touch-min); min-width: var(--touch-min); }
+      .back-to-top { width: 48px; height: 48px; font-size: 1.3rem; }
     }
 
     /* ─── 햄버거 메뉴 버튼 ─── */
@@ -653,7 +713,7 @@
     /* ─── 맨 위로 버튼 ─── */
     .back-to-top {
       position: fixed;
-      bottom: 2rem; right: 1.5rem;
+      bottom: calc(2rem + env(safe-area-inset-bottom)); right: calc(1.5rem + env(safe-area-inset-right));
       width: 44px; height: 44px;
       border-radius: 50%;
       background: var(--primary);
@@ -689,6 +749,9 @@
         --tag-orange: #744210;
         --tag-purple: #44337A;
         --tag-red: #742A2A;
+        --nav-bg: #2D3748;
+        --nav-fade-color: #2D3748;
+        --card-item-bg: #1A202C;
       }
       .tag-blue { color: #90CDF4; }
       .tag-green { color: #9AE6B4; }
@@ -696,24 +759,44 @@
       .tag-purple { color: #D6BCFA; }
       .tag-red { color: #FEB2B2; }
       .tag-confirmed { background: #276749; color: #C6F6D5; }
-      .nav { background: #2D3748; border-bottom-color: #4A5568; }
-      .nav-scroll-wrap .fade-left { background: linear-gradient(to right, #2D3748 30%, transparent); }
-      .nav-scroll-wrap .fade-right { background: linear-gradient(to left, #2D3748 30%, transparent); }
+      .nav { background: var(--nav-bg); border-bottom-color: #4A5568; }
       .nav-toggle span { background: var(--text); }
+      .nav-brand { color: #90CDF4; }
+      .nav-drawer { background: var(--nav-bg); }
+      .nav-drawer a { color: var(--text-light); }
+      .nav-drawer a:hover,
+      .nav-drawer a.active { background: #1A202C; color: #90CDF4; border-left-color: #90CDF4; }
       tbody tr:hover { background: #3A4556; }
+      td strong { color: #90CDF4; }
       .overview-card, .trend-card, .card-item, .key-points, .top10-card, .schedule-card { background: #1A202C; }
+      .card-item { border-left-color: var(--primary-light); }
+      .card-item-title { color: #90CDF4; }
+      .section-desc { background: #1A202C; }
       .cover { background: linear-gradient(135deg, #0A1628 0%, #1A478A 40%, #2B6CC4 100%); }
       .back-to-top { box-shadow: 0 4px 12px rgba(0,0,0,0.5); }
       #install-banner { background: linear-gradient(135deg, #0F2D5E, #1A478A) !important; }
+      .arch-layer { border-bottom: 1px solid rgba(255,255,255,0.1); }
+      footer { color: var(--text-light); }
     }
 
     /* ─── 인쇄 ─── */
     @media print {
       .nav, .card-list, #install-banner, .back-to-top { display: none !important; }
-      .table-wrap { display: block !important; }
+      .table-wrap { display: block !important; overflow: visible !important; }
       .cover { min-height: auto; padding: 3rem; page-break-after: always; }
       .section { page-break-inside: avoid; }
-      body { font-size: 11px; background: white; }
+      .section-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      thead th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      body { font-size: 11px; background: white; color: #000; }
+      .container { max-width: 100%; padding: 0.5rem; }
+      table { font-size: 9px; }
+      thead th { padding: 0.4rem 0.5rem; font-size: 8px; }
+      tbody td { padding: 0.3rem 0.5rem; font-size: 9px; }
+      .tag, .tag-confirmed { font-size: 7px; padding: 0.1rem 0.3rem; }
+      .section-body { box-shadow: none; border: 1px solid #ccc; }
+      .key-points { border-left-width: 2px; }
+      a { color: inherit; text-decoration: none; }
+      .trend-card, .overview-card, .top10-card, .schedule-card { border: 1px solid #ddd; }
     }
   </style>
 </head>
@@ -745,32 +828,34 @@
       <div class="fade-left" id="fade-left"></div>
       <div class="fade-right" id="fade-right"></div>
       <div class="nav-inner" id="nav-inner">
-        <a href="#overview">개요</a>
-        <a href="#s1">1.그리퍼</a>
-        <a href="#s2">2.로봇팔</a>
-        <a href="#s3">3.AMR/AGV</a>
-        <a href="#s4">4.물류</a>
-        <a href="#s5">5.AI선별</a>
-        <a href="#s6">6.비전</a>
-        <a href="#s7">7.PLC</a>
-        <a href="#s8">8.스마트팜</a>
-        <a href="#analysis">종합분석</a>
-        <a href="#strategy">참관전략</a>
+        <a href="#overview">1.행사개요</a>
+        <a href="#s2">2.그리퍼</a>
+        <a href="#s3">3.로봇팔</a>
+        <a href="#s4">4.AMR/AGV</a>
+        <a href="#s5">5.물류</a>
+        <a href="#s6">6.AI선별</a>
+        <a href="#s7">7.비전</a>
+        <a href="#s8">8.PLC</a>
+        <a href="#s9">9.스마트팜</a>
+        <a href="#s10">10.트렌드</a>
+        <a href="#s11">11.주목기업</a>
+        <a href="#s12">12.참관전략</a>
       </div>
     </div>
     <!-- 모바일: 드로어 -->
     <div class="nav-drawer" id="nav-drawer">
-      <a href="#overview">개요</a>
-      <a href="#s1">1. 로봇 그리퍼</a>
-      <a href="#s2">2. 로봇팔/협동로봇</a>
-      <a href="#s3">3. AMR/AGF/AGV</a>
-      <a href="#s4">4. AI 물류 자동화</a>
-      <a href="#s5">5. AI 선별 자동화</a>
-      <a href="#s6">6. 비전 선별 기술</a>
-      <a href="#s7">7. AI PLC 통합</a>
-      <a href="#s8">8. 스마트팜 기술</a>
-      <a href="#analysis">종합 분석</a>
-      <a href="#strategy">참관 전략</a>
+      <a href="#overview">1. 행사개요</a>
+      <a href="#s2">2. 그리퍼</a>
+      <a href="#s3">3. 로봇팔/협동로봇</a>
+      <a href="#s4">4. AMR/AGF/AGV</a>
+      <a href="#s5">5. AI 물류 자동화</a>
+      <a href="#s6">6. AI 선별 자동화</a>
+      <a href="#s7">7. 비전 선별 기술</a>
+      <a href="#s8">8. AI PLC 통합</a>
+      <a href="#s9">9. 스마트팜 기술</a>
+      <a href="#s10">10. 주요 트렌드</a>
+      <a href="#s11">11. 핵심 주목 기업</a>
+      <a href="#s12">12. 참관 일정 및 전략</a>
     </div>
   </nav>
 
@@ -779,7 +864,7 @@
     <!-- ═══════════════ 행사 개요 ═══════════════ -->
     <div class="section" id="overview">
       <div class="section-header">
-        <h2>행사 개요 및 조사 목적</h2>
+        <h2><span class="section-num">1</span>행사개요</h2>
       </div>
       <div class="section-body">
         <div class="overview-grid">
@@ -818,7 +903,27 @@
         </div>
 
         <h3>조사 목적</h3>
-        <p style="font-size:0.92rem;margin-bottom:1rem;">'<strong>로봇 기반 자동화 스마트팜 운영 플랫폼</strong>' 구축을 위해 AW2026 참가업체 중 스마트팜에 적용 가능한 기업·기술을 <strong>8개 기술 항목</strong>으로 구분 조사</p>
+        <p style="font-size:0.92rem;margin-bottom:1rem;">'<strong>로봇 기반 자동화 스마트팜 운영 플랫폼</strong>' 구축을 위해 AW2026 참가업체 중 스마트팜에 적용 가능한 기업·기술을 <strong>8개 기술 항목</strong>으로 구분하여 AI 에이전트 8개를 병렬로 운영하여 각 기술 항목을 동시에 탐색했습니다.</p>
+
+        <h3>AI 병렬 에이전트 조사 방법론</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>에이전트</th><th>담당 분야</th><th>조사 범위</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Agent 1</strong></td><td>로봇 그리퍼</td><td>소프트 그리퍼, 적응형 그리퍼, 진공 그리퍼, 로봇핸드</td></tr>
+              <tr><td><strong>Agent 2</strong></td><td>로봇팔/협동로봇</td><td>협동로봇, 6축/7축 로봇팔, SCARA, 델타로봇</td></tr>
+              <tr><td><strong>Agent 3</strong></td><td>AMR/AGF/AGV</td><td>자율이동로봇, 무인운반차, 무인지게차</td></tr>
+              <tr><td><strong>Agent 4</strong></td><td>AI 물류 자동화</td><td>팔레타이징, 자동 창고, WMS, 물류 턴키</td></tr>
+              <tr><td><strong>Agent 5</strong></td><td>AI 선별 자동화</td><td>AI 딥러닝 비전 검사, 자동 분류, MLOps</td></tr>
+              <tr><td><strong>Agent 6</strong></td><td>비전 선별 기술</td><td>머신비전, 3D 비전, 라인스캔, 하이퍼스펙트럴</td></tr>
+              <tr><td><strong>Agent 7</strong></td><td>AI PLC 통합</td><td>PLC, IoT, SCADA, MES, 디지털트윈</td></tr>
+              <tr><td><strong>Agent 8</strong></td><td>스마트팜 기술</td><td>환경제어, 양액, 식물공장, 센서, 드론</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:0.85rem;color:var(--text-light);">조사 소스: AW2026 공식 사이트(automationworld.co.kr), 헬로티·로봇신문·전자신문·EBN 등 전시회 리뷰, 참가업체 프레스 보도, 산업 분석 자료</p>
 
         <h3>2026년 핵심 테마</h3>
         <div class="trend-grid">
@@ -843,9 +948,9 @@
     </div>
 
     <!-- ═══════════════ 1. 로봇 그리퍼 ═══════════════ -->
-    <div class="section" id="s1">
+    <div class="section" id="s2">
       <div class="section-header">
-        <h2><span class="section-num">1</span>로봇 그리퍼 (Robot Grippers)</h2>
+        <h2><span class="section-num">2</span>그리퍼 (Robot Grippers)</h2>
       </div>
       <div class="section-body">
         <div class="section-desc">소프트 그리퍼, 적응형 그리퍼, 다관절 로봇핸드 — 작물 손상 없는 수확 및 핸들링</div>
@@ -877,9 +982,9 @@
     </div>
 
     <!-- ═══════════════ 2. 로봇팔/협동로봇 ═══════════════ -->
-    <div class="section" id="s2">
+    <div class="section" id="s3">
       <div class="section-header">
-        <h2><span class="section-num">2</span>로봇팔/협동로봇 (Robot Arms / Cobots)</h2>
+        <h2><span class="section-num">3</span>로봇팔/협동로봇 (Robot Arms / Cobots)</h2>
       </div>
       <div class="section-body">
         <div class="section-desc">수확, 방제, 전정 등 농작업에 적합한 협동로봇 팔</div>
@@ -911,9 +1016,9 @@
     </div>
 
     <!-- ═══════════════ 3. AMR/AGF/AGV ═══════════════ -->
-    <div class="section" id="s3">
+    <div class="section" id="s4">
       <div class="section-header">
-        <h2><span class="section-num">3</span>AMR/AGF/AGV</h2>
+        <h2><span class="section-num">4</span>AMR/AGF/AGV</h2>
       </div>
       <div class="section-body">
         <div class="section-desc">온실 내 자율이동 운반 로봇, 무인 지게차, 물류 자동화</div>
@@ -946,9 +1051,9 @@
     </div>
 
     <!-- ═══════════════ 4. AI 물류 자동화 ═══════════════ -->
-    <div class="section" id="s4">
+    <div class="section" id="s5">
       <div class="section-header">
-        <h2><span class="section-num">4</span>AI 물류 자동화 (AI Logistics Automation)</h2>
+        <h2><span class="section-num">5</span>AI 물류 자동화 (AI Logistics Automation)</h2>
       </div>
       <div class="section-body">
         <div class="section-desc">AI 기반 물류, 팔레타이징, 자동 창고, 포장 라인 자동화</div>
@@ -979,9 +1084,9 @@
     </div>
 
     <!-- ═══════════════ 5. AI 선별 자동화 ═══════════════ -->
-    <div class="section" id="s5">
+    <div class="section" id="s6">
       <div class="section-header">
-        <h2><span class="section-num">5</span>AI 선별 자동화 (AI Sorting Automation)</h2>
+        <h2><span class="section-num">6</span>AI 선별 자동화 (AI Sorting Automation)</h2>
       </div>
       <div class="section-body">
         <div class="section-desc">AI 기반 농산물 선별, 등급 판정, 품질 검사</div>
@@ -1013,9 +1118,9 @@
     </div>
 
     <!-- ═══════════════ 6. 비전 선별 기술 ═══════════════ -->
-    <div class="section" id="s6">
+    <div class="section" id="s7">
       <div class="section-header">
-        <h2><span class="section-num">6</span>비전 선별 기술 (Vision Sorting Technology)</h2>
+        <h2><span class="section-num">7</span>비전 선별 기술 (Vision Sorting Technology)</h2>
       </div>
       <div class="section-body">
         <div class="section-desc">머신비전 카메라, 3D 비전, 하이퍼스펙트럴 이미징, 라인스캔</div>
@@ -1048,9 +1153,9 @@
     </div>
 
     <!-- ═══════════════ 7. AI PLC 통합 ═══════════════ -->
-    <div class="section" id="s7">
+    <div class="section" id="s8">
       <div class="section-header">
-        <h2><span class="section-num">7</span>AI PLC 통합 플랫폼 (AI PLC Integration Platform)</h2>
+        <h2><span class="section-num">8</span>AI PLC 통합 플랫폼 (AI PLC Integration Platform)</h2>
       </div>
       <div class="section-body">
         <div class="section-desc">AI 기능 내장 PLC, IoT 플랫폼, SCADA, MES — 온실 통합 제어</div>
@@ -1082,9 +1187,9 @@
     </div>
 
     <!-- ═══════════════ 8. 스마트팜 기술 ═══════════════ -->
-    <div class="section" id="s8">
+    <div class="section" id="s9">
       <div class="section-header">
-        <h2><span class="section-num">8</span>스마트팜 관련 기술 (Smart Farm Technologies)</h2>
+        <h2><span class="section-num">9</span>스마트팜 관련 기술 (Smart Farm Technologies)</h2>
       </div>
       <div class="section-body">
         <div class="section-desc">환경 제어, 양액 시스템, 식물공장, 센서 네트워크, 생육 모니터링, 드론 방제, 육묘 자동화, LED 광원, 냉방·에너지</div>
@@ -1135,10 +1240,50 @@
       </div>
     </div>
 
-    <!-- ═══════════════ 종합 분석 ═══════════════ -->
-    <div class="section" id="analysis">
+    <!-- ═══════════════ 10. 주요 트렌드 ═══════════════ -->
+    <div class="section" id="s10">
       <div class="section-header">
-        <h2>종합 분석 및 추천 전략</h2>
+        <h2><span class="section-num">10</span>주요 트렌드</h2>
+      </div>
+      <div class="section-body">
+        <div class="section-desc">AW2026 전시회 데이터 기반 스마트팜 자동화 분야 핵심 트렌드</div>
+        <div class="trend-grid">
+          <div class="trend-card">
+            <div class="trend-title">1. 협동로봇 고가반하중화</div>
+            <div class="trend-desc">협동로봇 가반하중이 20~50kg급으로 확대. 두산로보틱스(25kg, 세계 1위), FANUC CRX-30iA(30kg), 뉴로메카 Indy(30/50kg급)가 주도. 안전 펜스 없이 대형 농산물 수확·운반 실현.</div>
+          </div>
+          <div class="trend-card">
+            <div class="trend-title">2. SW정의 PLC (소프트웨어 정의 자동화)</div>
+            <div class="trend-desc">LS일렉트릭 SU-CM70은 기능을 SW 앱처럼 추가·변경. 모벤시스 WMX는 PC 기반 소프트 PLC로 59% 비용 절감. 온실 환경 제어 기능을 유연하게 확장 가능.</div>
+          </div>
+          <div class="trend-card">
+            <div class="trend-title">3. AMMR 복합로봇 (로봇팔+AMR 통합)</div>
+            <div class="trend-desc">원익로보틱스 AMMR, 유진로봇 GoCart Omni+협동로봇, 마로로봇테크 모바일 매니퓰레이터. 온실 내 자율 이동+수확·운반·선별을 한 번에 수행하는 복합 작업 로봇 실용화 가속.</div>
+          </div>
+          <div class="trend-card">
+            <div class="trend-title">4. AI 비전 노코드화</div>
+            <div class="trend-desc">뉴로클 Neuro-T(노코딩 오토딥러닝), 슈퍼브AI ZERO(제로샷, 라벨링 불필요), 코그넥스 In-Sight 3800(AI 엣지러닝). IT 인력 부족한 농업 현장에서 비전문가도 AI 모델 직접 구축.</div>
+          </div>
+          <div class="trend-card">
+            <div class="trend-title">5. 콜드체인 자동화</div>
+            <div class="trend-desc">긱플러스 SkyCube(4배 밀도 냉장 자동창고), 아세테크 오토스토어(큐브형 냉장 물류), 현대글로비스 ORCA WCS(입고~출고 통합), 멀티웨이 무인지게차(냉장 저장고 자동 입출고).</div>
+          </div>
+          <div class="trend-card">
+            <div class="trend-title">6. 5G/IoT 기반 스마트팜 통합 플랫폼</div>
+            <div class="trend-desc">KT 기가 스마트팜(5G+AI+IoT), 비바엔에스 잇츠스마트팜, 큐빅스 국가표준 센서(WiFi/LTE/LoRa), KETI IoT 표준 플랫폼(oneM2M). 실시간 병해충 감지, 원격 환경 제어, 자율 의사결정.</div>
+          </div>
+          <div class="trend-card">
+            <div class="trend-title">7. LLM/생성AI의 산업 자동화 침투</div>
+            <div class="trend-desc">LS일렉트릭 LLM 대화형 진단, 싸이몬 AI Copilot(자연어 PLC 코딩), 로크웰 Copilot(AI 설계 자동화), 라온피플 LLM+VLM 비전. 비전문가도 자연어로 설비 진단·코드 생성.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════ 11. 핵심 주목 기업 ═══════════════ -->
+    <div class="section" id="s11">
+      <div class="section-header">
+        <h2><span class="section-num">11</span>핵심 주목 기업</h2>
       </div>
       <div class="section-body">
 
@@ -1181,7 +1326,7 @@
             <div class="top10-info">
               <div class="top10-name">LS일렉트릭</div>
               <div class="top10-field">AI PLC</div>
-              <div class="top10-reason">SW정의 PLC SU-CM70, LLM 진단, 270m² 최대 규모 참가</div>
+              <div class="top10-reason">SW정의 PLC SU-CM70, LLM 진단, 270m2 최대 규모 참가</div>
             </div>
           </div>
           <div class="top10-card">
@@ -1252,10 +1397,10 @@
       </div>
     </div>
 
-    <!-- ═══════════════ 참관 전략 ═══════════════ -->
-    <div class="section" id="strategy">
+    <!-- ═══════════════ 12. 참관 일정 및 전략 ═══════════════ -->
+    <div class="section" id="s12">
       <div class="section-header">
-        <h2>3일 참관 전략</h2>
+        <h2><span class="section-num">12</span>참관 일정 및 전략</h2>
       </div>
       <div class="section-body">
         <div class="schedule-grid">
@@ -1297,7 +1442,7 @@
   <button class="back-to-top" id="back-to-top" aria-label="맨 위로">&#9650;</button>
 
   <div id="install-banner"
-    style="display:none;position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,#1A478A,#2B6CC4);color:#fff;padding:1rem 1.5rem;z-index:10000;box-shadow:0 -2px 10px rgba(0,0,0,0.2);font-family:'Noto Sans KR',sans-serif;">
+    style="display:none;position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,#1A478A,#2B6CC4);color:#fff;padding:1rem 1.5rem;padding-bottom:calc(1rem + env(safe-area-inset-bottom));z-index:10000;box-shadow:0 -2px 10px rgba(0,0,0,0.2);font-family:'Noto Sans KR',sans-serif;">
     <div style="display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;">
       <div>
         <strong>AW2026 보고서 앱 설치</strong>

@@ -55,7 +55,7 @@ graph TB
     subgraph FARM["🌿 스마트팜 8대 기술 항목"]
         direction LR
 
-        subgraph GRIPPER["🤏 로봇 그리퍼"]
+        subgraph GRIPPER["🤏 2. 그리퍼"]
             G1["테솔로 DG-5F\n20DoF 다관절"]
             G2["슈말츠 mGrip\nAI 진공"]
             G3["에이딘 Gen2\n촉각센서 16DoF"]
@@ -67,7 +67,7 @@ graph TB
             G9["씨메스\n3D비전+AI 피킹"]
         end
 
-        subgraph COBOT["🦾 로봇팔/협동로봇"]
+        subgraph COBOT["🦾 3. 로봇팔/협동로봇"]
             CB1["FANUC CRX\n5~30kg 8년 무보수"]
             CB2["두산 M/H/A\n국내1위 글로벌4위"]
             CB3["테크맨 TM\n내장 비전+AI"]
@@ -79,7 +79,7 @@ graph TB
             CB9["아이에이코리아\n전동 실린더"]
         end
 
-        subgraph AMRSEC["🚗 AMR/AGF/AGV"]
+        subgraph AMRSEC["🚗 4. AMR/AGF/AGV"]
             A1["유진로봇 GoCart\n2톤 3D ToF"]
             A2["긱플러스 P800\n글로벌 AMR 1위"]
             A3["현대무벡스\nAGV 군집주행"]
@@ -92,7 +92,7 @@ graph TB
             A10["현대차 MobED\nCES 최고혁신상"]
         end
 
-        subgraph AILOG["📦 AI 물류 자동화"]
+        subgraph AILOG["📦 5. AI 물류 자동화"]
             AL1["씨메스\n랜덤 팔레타이징"]
             AL2["현대글로비스\nORCA WCS"]
             AL3["현대무벡스\nAS/RS 디지털트윈"]
@@ -104,7 +104,7 @@ graph TB
             AL9["에이딘 AIRO-One\nAI비전+그리퍼"]
         end
 
-        subgraph AISORT["🎯 AI 선별 자동화"]
+        subgraph AISORT["🎯 6. AI 선별 자동화"]
             AS1["라온피플\n농진청 협약 AI"]
             AS2["슈퍼브AI ZERO\n제로샷 비전"]
             AS3["마키나락스\nRunway AI OS"]
@@ -116,7 +116,7 @@ graph TB
             AS9["에이아이웍스\nAI Agent"]
         end
 
-        subgraph VISION["👁️ 비전 선별 기술"]
+        subgraph VISION["👁️ 7. 비전 선별 기술"]
             VS1["뷰웍스 TDI\n16K 라인스캔"]
             VS2["코그넥스 3800\n분당 2,500개"]
             VS3["키엔스 CV-X\nAI 바코드"]
@@ -129,7 +129,7 @@ graph TB
             VS10["바이렉스\nAuto Focus"]
         end
 
-        subgraph AIPLC["⚙️ AI PLC 통합"]
+        subgraph AIPLC["⚙️ 8. AI PLC 통합"]
             AP1["LS SU-CM70\nSW정의 PLC"]
             AP2["싸이몬 CICON\nAI Copilot"]
             AP3["로크웰 5590\nAI 내재 PLC"]
@@ -141,7 +141,7 @@ graph TB
             AP9["CJ올리브네트웍스\nMES+에이전틱AI"]
         end
 
-        subgraph SMARTFARM["🌱 스마트팜 기술"]
+        subgraph SMARTFARM["🌱 9. 스마트팜 기술"]
             SF1["그린플러스\n온실 1위 턴키"]
             SF2["엔씽 CUBE\n모듈형 수직농장"]
             SF3["팜에이트\n식물공장+로봇"]
@@ -159,7 +159,20 @@ graph TB
 
     EDGE --> FARM
 
-    subgraph TOP10["🏆 핵심 주목 기업 TOP 10"]
+    subgraph TRENDS["📊 10. 주요 트렌드"]
+        direction LR
+        TR1["협동로봇 고가반하중화\n20~50kg급 확대"]
+        TR2["SW정의 PLC\nSDA 유연 확장"]
+        TR3["AMMR 복합로봇\n이동+수확 통합"]
+        TR4["AI 비전 노코드화\n비전문가 직접 구축"]
+        TR5["콜드체인 자동화\n냉장 물류 전과정"]
+        TR6["5G/IoT 스마트팜\n통합 관제 플랫폼"]
+        TR7["LLM/생성AI\n산업 자동화 침투"]
+    end
+
+    FARM --> TRENDS
+
+    subgraph TOP10["🏆 11. 핵심 주목 기업 TOP 10"]
         direction LR
         T1["1. 원익로보틱스 🇰🇷\n로봇팔·AMR"]
         T2["2. LS일렉트릭 🇰🇷\nAI PLC"]
@@ -173,9 +186,9 @@ graph TB
         T10["10. 그린플러스 🇰🇷\n스마트팜"]
     end
 
-    FARM --> TOP10
+    TRENDS --> TOP10
 
-    subgraph SCHEDULE["📅 3일 참관 전략"]
+    subgraph SCHEDULE["📅 12. 참관 일정 및 전략"]
         direction LR
         D1["Day1 3/4\n🦾 로봇팔·그리퍼\n+ 협동로봇 시연"]
         D2["Day2 3/5\n👁️ 비전·AI 선별\n+ AMR/물류"]
@@ -201,6 +214,7 @@ graph TB
     style VISION fill:#D1F2EB,stroke:#1ABC9C,color:#1B4F72
     style AIPLC fill:#FADBD8,stroke:#E74C3C,color:#1B4F72
     style SMARTFARM fill:#D5F5E3,stroke:#2ECC71,color:#1B4F72
+    style TRENDS fill:#E8F8F5,stroke:#1ABC9C,color:#1B4F72
     style TOP10 fill:#FEF9E7,stroke:#F39C12,color:#1B4F72
     style SCHEDULE fill:#EBF5FB,stroke:#3498DB,color:#1B4F72
     style P1 fill:#A569BD,stroke:#7D3C98,color:#fff
@@ -222,6 +236,13 @@ graph TB
     style C2 fill:#58D68D,stroke:#27AE60,color:#1B4F72
     style C3 fill:#58D68D,stroke:#27AE60,color:#1B4F72
     style C4 fill:#58D68D,stroke:#27AE60,color:#1B4F72
+    style TR1 fill:#A3E4D7,stroke:#1ABC9C,color:#1B4F72
+    style TR2 fill:#A3E4D7,stroke:#1ABC9C,color:#1B4F72
+    style TR3 fill:#A3E4D7,stroke:#1ABC9C,color:#1B4F72
+    style TR4 fill:#A3E4D7,stroke:#1ABC9C,color:#1B4F72
+    style TR5 fill:#A3E4D7,stroke:#1ABC9C,color:#1B4F72
+    style TR6 fill:#A3E4D7,stroke:#1ABC9C,color:#1B4F72
+    style TR7 fill:#A3E4D7,stroke:#1ABC9C,color:#1B4F72
     style T1 fill:#F9E79F,stroke:#F1C40F,color:#1B4F72
     style T2 fill:#F9E79F,stroke:#F1C40F,color:#1B4F72
     style T3 fill:#F9E79F,stroke:#F1C40F,color:#1B4F72

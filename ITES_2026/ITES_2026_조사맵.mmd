@@ -8,6 +8,13 @@ graph TB
         INFO["📅 2026.3.31~4.3 | 📍 심천 국제컨벤션센터(보안)\n🏢 1,658 참가업체·16만m² | 🤖 구현지능 전용구역 신설"]
     end
 
+    subgraph SEC1["1️⃣ 행사개요"]
+        direction LR
+        OV1["전시회 개요\n27년 역사·UFI 인증"]
+        OV2["조사 목적\n8개 기술 항목"]
+        OV3["AI 에이전트 8개\n병렬 조사 방법론"]
+    end
+
     subgraph PLATFORM["🧠 AI Platform — 통합 운영 플랫폼"]
         P1["Siemens\nMindSphere + digiCEAd"]
         P2["Advantech\nWISE-PaaS IoT"]
@@ -46,16 +53,17 @@ graph TB
         C4["Haiwell\nA8 IoT PLC"]
     end
 
-    HEADER --> PLATFORM
+    HEADER --> SEC1
+    SEC1 --> PLATFORM
     PLATFORM --> EXECUTION
     EXECUTION --> PERCEPTION
     PERCEPTION --> MOBILITY
     MOBILITY --> EDGE
 
-    subgraph FARM["🌿 스마트팜 8대 기술 항목"]
+    subgraph TECH8["🌿 8대 기술 항목 (2~9)"]
         direction LR
 
-        subgraph GRIPPER["🤏 로봇 그리퍼"]
+        subgraph SEC2["2️⃣ 그리퍼"]
             G1["Inspire Robots\n5지 영민손 촉각"]
             G2["Schmalz\nFDA 진공 그리퍼"]
             G3["SRT\n불가사리형 소프트"]
@@ -67,7 +75,7 @@ graph TB
             G9["Linghang\n자동 툴체인저"]
         end
 
-        subgraph COBOT["🦾 로봇팔/협동로봇"]
+        subgraph SEC3["3️⃣ 로봇팔/협동로봇"]
             CB1["Flexiv Rizon\n7축 적응형 IP65"]
             CB2["FANUC CRX\n5~30kg 8년 무보수"]
             CB3["Dobot CR\nSafeSkin 안전"]
@@ -79,7 +87,7 @@ graph TB
             CB9["Kawasaki duAro\n듀얼암 SCARA"]
         end
 
-        subgraph AMRSEC["🚗 AMR/AGF/AGV"]
+        subgraph SEC4["4️⃣ AMR/AGF/AGV"]
             A1["SEER SRC\n범용 AMR 제어기"]
             A2["Hikrobot\nLMR/FMR/CMR"]
             A3["Geek+ MP1000R\n글로벌 AMR 1위"]
@@ -91,7 +99,7 @@ graph TB
             A9["VisionNav\n자율 포크리프트"]
         end
 
-        subgraph AILOG["📦 AI 물류 자동화"]
+        subgraph SEC5["5️⃣ AI 물류 자동화"]
             AL1["KUKA Arctic\n-30°C 팔레타이징"]
             AL2["Siemens\nINTRALOG WMS"]
             AL3["Hikrobot\niWMS + RCS"]
@@ -103,7 +111,7 @@ graph TB
             AL9["Multiway\n자율 포크 10m"]
         end
 
-        subgraph AISORT["🎯 AI 선별 자동화"]
+        subgraph SEC6["6️⃣ AI 선별 자동화"]
             AS1["SmartMore\nIndustryGPT"]
             AS2["Hexagon\nML 표면결함"]
             AS3["Cognex ViDi\n소량학습 분류"]
@@ -115,7 +123,7 @@ graph TB
             AS9["DLCV.AI\n100장→1분 학습"]
         end
 
-        subgraph VISION["👁️ 비전 선별 기술"]
+        subgraph SEC7["7️⃣ 비전 선별 기술"]
             VS1["Keyence\n라인스캔 165kHz"]
             VS2["LMI Gocator\n4K+ 3D 프로파일"]
             VS3["OPT Machine\nLED 조명 1000+"]
@@ -127,7 +135,7 @@ graph TB
             VS9["CCS Inc.\nAgri-Bio LED"]
         end
 
-        subgraph AIPLC["⚙️ AI PLC 통합"]
+        subgraph SEC8["8️⃣ AI PLC 통합"]
             AP1["Siemens S7\nIOT2050 LoRaWAN"]
             AP2["Mitsubishi\niQ-R + MELIPC"]
             AP3["Inovance AC800\n256축 EtherCAT"]
@@ -139,7 +147,7 @@ graph TB
             AP9["Kinco MK\nHMI+PLC+IoT"]
         end
 
-        subgraph SMARTFARM["🌱 스마트팜 기술"]
+        subgraph SEC9["9️⃣ 스마트팜 기술"]
             SF1["Siemens\ndigiCEAd 디지털온실"]
             SF2["Advantech\nEdge AI 26TOPS"]
             SF3["DJI T100\n100L 방제드론"]
@@ -152,9 +160,23 @@ graph TB
         end
     end
 
-    EDGE --> FARM
+    EDGE --> TECH8
 
-    subgraph TOP10["🏆 핵심 주목 기업 TOP 10"]
+    subgraph SEC10["🔟 주요 트렌드"]
+        direction LR
+        TR1["구현지능/인형로봇\n산업 부상"]
+        TR2["적응형 힘 제어\n농업 적용 확대"]
+        TR3["산업 대형모델\nIndustryGPT/Mech-GPT"]
+        TR4["콜드체인\n다온도 존 자동화"]
+        TR5["소프트 그리퍼\n농업 타겟 명시"]
+        TR6["디지털 트윈 CEA\n전용 솔루션"]
+        TR7["엣지 AI 비전\n현장 배치 확산"]
+        TR8["노코드/제로코드\n비전 플랫폼 대중화"]
+    end
+
+    TECH8 --> SEC10
+
+    subgraph SEC11["🏆 핵심 주목 기업 TOP 10"]
         direction LR
         T1["1. Flexiv 🇨🇳\n로봇팔·적응형"]
         T2["2. Siemens 🇩🇪\nAI PLC·물류·스마트팜"]
@@ -168,9 +190,9 @@ graph TB
         T10["10. Advantech 🇹🇼\nAI PLC·스마트팜"]
     end
 
-    FARM --> TOP10
+    SEC10 --> SEC11
 
-    subgraph SCHEDULE["📅 4일 참관 전략"]
+    subgraph SEC12["📅 참관 일정 및 전략"]
         direction LR
         D1["Day1 3/31\n🦾 로봇팔·그리퍼\n+ 구현지능 구역"]
         D2["Day2 4/1\n👁️ 비전·AI 선별\n+ AMR/AGV"]
@@ -179,26 +201,31 @@ graph TB
         D1 --> D2 --> D3 --> D4
     end
 
-    TOP10 --> SCHEDULE
+    SEC11 --> SEC12
 
     style HEADER fill:#1B4F72,stroke:#1B4F72,color:#fff
     style INFO fill:#2E86C1,stroke:#2E86C1,color:#fff
+    style SEC1 fill:#E8F8F5,stroke:#1ABC9C,color:#1B4F72
     style PLATFORM fill:#7D3C98,stroke:#7D3C98,color:#fff
     style EXECUTION fill:#C0392B,stroke:#C0392B,color:#fff
     style PERCEPTION fill:#E67E22,stroke:#E67E22,color:#fff
     style MOBILITY fill:#2980B9,stroke:#2980B9,color:#fff
     style EDGE fill:#27AE60,stroke:#27AE60,color:#fff
-    style FARM fill:#F4F6F7,stroke:#566573,color:#2C3E50
-    style GRIPPER fill:#D5F5E3,stroke:#27AE60,color:#1B4F72
-    style COBOT fill:#D6EAF8,stroke:#2E86C1,color:#1B4F72
-    style AMRSEC fill:#E8DAEF,stroke:#8E44AD,color:#1B4F72
-    style AILOG fill:#FDEBD0,stroke:#E67E22,color:#1B4F72
-    style AISORT fill:#FCF3CF,stroke:#F1C40F,color:#1B4F72
-    style VISION fill:#D1F2EB,stroke:#1ABC9C,color:#1B4F72
-    style AIPLC fill:#FADBD8,stroke:#E74C3C,color:#1B4F72
-    style SMARTFARM fill:#D5F5E3,stroke:#2ECC71,color:#1B4F72
-    style TOP10 fill:#FEF9E7,stroke:#F39C12,color:#1B4F72
-    style SCHEDULE fill:#EBF5FB,stroke:#3498DB,color:#1B4F72
+    style TECH8 fill:#F4F6F7,stroke:#566573,color:#2C3E50
+    style SEC2 fill:#D5F5E3,stroke:#27AE60,color:#1B4F72
+    style SEC3 fill:#D6EAF8,stroke:#2E86C1,color:#1B4F72
+    style SEC4 fill:#E8DAEF,stroke:#8E44AD,color:#1B4F72
+    style SEC5 fill:#FDEBD0,stroke:#E67E22,color:#1B4F72
+    style SEC6 fill:#FCF3CF,stroke:#F1C40F,color:#1B4F72
+    style SEC7 fill:#D1F2EB,stroke:#1ABC9C,color:#1B4F72
+    style SEC8 fill:#FADBD8,stroke:#E74C3C,color:#1B4F72
+    style SEC9 fill:#D5F5E3,stroke:#2ECC71,color:#1B4F72
+    style SEC10 fill:#F5EEF8,stroke:#8E44AD,color:#1B4F72
+    style SEC11 fill:#FEF9E7,stroke:#F39C12,color:#1B4F72
+    style SEC12 fill:#EBF5FB,stroke:#3498DB,color:#1B4F72
+    style OV1 fill:#A3E4D7,stroke:#1ABC9C,color:#1B4F72
+    style OV2 fill:#A3E4D7,stroke:#1ABC9C,color:#1B4F72
+    style OV3 fill:#A3E4D7,stroke:#1ABC9C,color:#1B4F72
     style P1 fill:#A569BD,stroke:#7D3C98,color:#fff
     style P2 fill:#A569BD,stroke:#7D3C98,color:#fff
     style P3 fill:#A569BD,stroke:#7D3C98,color:#fff
@@ -218,6 +245,14 @@ graph TB
     style C2 fill:#58D68D,stroke:#27AE60,color:#1B4F72
     style C3 fill:#58D68D,stroke:#27AE60,color:#1B4F72
     style C4 fill:#58D68D,stroke:#27AE60,color:#1B4F72
+    style TR1 fill:#D2B4DE,stroke:#8E44AD,color:#1B4F72
+    style TR2 fill:#D2B4DE,stroke:#8E44AD,color:#1B4F72
+    style TR3 fill:#D2B4DE,stroke:#8E44AD,color:#1B4F72
+    style TR4 fill:#D2B4DE,stroke:#8E44AD,color:#1B4F72
+    style TR5 fill:#D2B4DE,stroke:#8E44AD,color:#1B4F72
+    style TR6 fill:#D2B4DE,stroke:#8E44AD,color:#1B4F72
+    style TR7 fill:#D2B4DE,stroke:#8E44AD,color:#1B4F72
+    style TR8 fill:#D2B4DE,stroke:#8E44AD,color:#1B4F72
     style T1 fill:#F9E79F,stroke:#F1C40F,color:#1B4F72
     style T2 fill:#F9E79F,stroke:#F1C40F,color:#1B4F72
     style T3 fill:#F9E79F,stroke:#F1C40F,color:#1B4F72

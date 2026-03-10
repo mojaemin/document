@@ -3,13 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#0a0e17">
+<meta name="theme-color" content="#0a0e17" id="themeColor">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>ITES 2026 스마트팜 참가업체 조사보고서</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<script>
+// Prevent FOUC: apply saved theme before CSS loads
+(function(){
+  var t = localStorage.getItem('ites-theme');
+  if (t) document.documentElement.setAttribute('data-theme', t);
+})();
+</script>
 <style>
 :root {
+  /* Dark theme (default) */
   --bg: #0a0e17;
   --bg2: #111827;
   --bg3: #1a2332;
@@ -18,6 +26,18 @@
   --text: #c8d6e5;
   --text2: #8899aa;
   --white: #e8f0fe;
+  --nav-bg: rgba(10,14,23,0.85);
+  --nav-fade-l: rgba(10,14,23,0.95);
+  --nav-fade-r: rgba(10,14,23,0.95);
+  --table-hover: rgba(0,212,170,0.03);
+  --table-head-bg: rgba(0,0,0,0.2);
+  --table-row-border: rgba(255,255,255,0.03);
+  --hero-grid-line: rgba(0,212,170,0.03);
+  --hero-glow1: rgba(0,212,170,0.08);
+  --hero-glow2: rgba(79,172,254,0.06);
+  --hero-glow3: rgba(168,85,247,0.05);
+  --scroll-top-shadow: rgba(0,212,170,0.3);
+  --card-hover-shadow: rgba(0,0,0,0.3);
   --accent: #00d4aa;
   --accent2: #00b894;
   --blue: #4facfe;
@@ -35,9 +55,95 @@
   --vision: #00e5ff;
   --aiplc: #ff6b9d;
   --smartfarm: #7bed9f;
+  --trend: #c084fc;
   --font: 'Noto Sans KR', sans-serif;
   --mono: 'JetBrains Mono', monospace;
   --display: 'Playfair Display', serif;
+}
+
+/* Light mode */
+[data-theme="light"] {
+  --bg: #f5f7fa;
+  --bg2: #ebeef3;
+  --bg3: #e2e6ec;
+  --card: #ffffff;
+  --border: #d1d9e0;
+  --text: #3a4a5c;
+  --text2: #6b7d8e;
+  --white: #1a2332;
+  --nav-bg: rgba(245,247,250,0.92);
+  --nav-fade-l: rgba(245,247,250,0.95);
+  --nav-fade-r: rgba(245,247,250,0.95);
+  --table-hover: rgba(0,180,148,0.06);
+  --table-head-bg: rgba(0,0,0,0.04);
+  --table-row-border: rgba(0,0,0,0.05);
+  --hero-grid-line: rgba(0,180,148,0.06);
+  --hero-glow1: rgba(0,180,148,0.08);
+  --hero-glow2: rgba(60,140,220,0.06);
+  --hero-glow3: rgba(140,70,210,0.05);
+  --scroll-top-shadow: rgba(0,180,148,0.25);
+  --card-hover-shadow: rgba(0,0,0,0.08);
+  --accent: #00b894;
+  --accent2: #00a383;
+  --blue: #3a8fd4;
+  --purple: #8b3dd4;
+  --orange: #e55a2b;
+  --red: #e03e4d;
+  --yellow: #d4a800;
+  --pink: #d4527e;
+  --cyan: #00b8cc;
+  --gripper: #00b894;
+  --cobot: #3a8fd4;
+  --amr: #8b3dd4;
+  --ailogistics: #e55a2b;
+  --aisorting: #d4a800;
+  --vision: #00b8cc;
+  --aiplc: #d4527e;
+  --smartfarm: #4caf50;
+  --trend: #9b59b6;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #f5f7fa;
+    --bg2: #ebeef3;
+    --bg3: #e2e6ec;
+    --card: #ffffff;
+    --border: #d1d9e0;
+    --text: #3a4a5c;
+    --text2: #6b7d8e;
+    --white: #1a2332;
+    --nav-bg: rgba(245,247,250,0.92);
+    --nav-fade-l: rgba(245,247,250,0.95);
+    --nav-fade-r: rgba(245,247,250,0.95);
+    --table-hover: rgba(0,180,148,0.06);
+    --table-head-bg: rgba(0,0,0,0.04);
+    --table-row-border: rgba(0,0,0,0.05);
+    --hero-grid-line: rgba(0,180,148,0.06);
+    --hero-glow1: rgba(0,180,148,0.08);
+    --hero-glow2: rgba(60,140,220,0.06);
+    --hero-glow3: rgba(140,70,210,0.05);
+    --scroll-top-shadow: rgba(0,180,148,0.25);
+    --card-hover-shadow: rgba(0,0,0,0.08);
+    --accent: #00b894;
+    --accent2: #00a383;
+    --blue: #3a8fd4;
+    --purple: #8b3dd4;
+    --orange: #e55a2b;
+    --red: #e03e4d;
+    --yellow: #d4a800;
+    --pink: #d4527e;
+    --cyan: #00b8cc;
+    --gripper: #00b894;
+    --cobot: #3a8fd4;
+    --amr: #8b3dd4;
+    --ailogistics: #e55a2b;
+    --aisorting: #d4a800;
+    --vision: #00b8cc;
+    --aiplc: #d4527e;
+    --smartfarm: #4caf50;
+    --trend: #9b59b6;
+  }
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -80,17 +186,17 @@ body {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 600px 400px at 20% 50%, rgba(0,212,170,0.08) 0%, transparent 70%),
-    radial-gradient(ellipse 500px 500px at 80% 30%, rgba(79,172,254,0.06) 0%, transparent 70%),
-    radial-gradient(ellipse 400px 300px at 50% 80%, rgba(168,85,247,0.05) 0%, transparent 70%);
+    radial-gradient(ellipse 600px 400px at 20% 50%, var(--hero-glow1) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 500px at 80% 30%, var(--hero-glow2) 0%, transparent 70%),
+    radial-gradient(ellipse 400px 300px at 50% 80%, var(--hero-glow3) 0%, transparent 70%);
 }
 
 .hero-grid {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(0,212,170,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,212,170,0.03) 1px, transparent 1px);
+    linear-gradient(var(--hero-grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--hero-grid-line) 1px, transparent 1px);
   background-size: 60px 60px;
   animation: gridMove 20s linear infinite;
 }
@@ -170,12 +276,158 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* Theme toggle button */
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  transition: all 0.3s;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0 2px 10px var(--card-hover-shadow);
+}
+
+.theme-toggle:hover { border-color: var(--accent); }
+
+/* Hamburger menu button (mobile only) */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--white);
+  font-size: 1.3rem;
+  cursor: pointer;
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0 2px 10px var(--card-hover-shadow);
+  transition: all 0.3s;
+}
+
+.hamburger:hover { border-color: var(--accent); }
+
+.hamburger-line {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.hamburger-line::before,
+.hamburger-line::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.hamburger-line::before { top: -6px; }
+.hamburger-line::after { top: 6px; }
+
+.hamburger.open .hamburger-line { background: transparent; }
+.hamburger.open .hamburger-line::before { top: 0; transform: rotate(45deg); }
+.hamburger.open .hamburger-line::after { top: 0; transform: rotate(-45deg); }
+
+/* Drawer overlay */
+.drawer-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 149;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.drawer-overlay.visible {
+  display: block;
+  opacity: 1;
+}
+
+/* Drawer navigation */
+.drawer {
+  position: fixed;
+  top: 0;
+  left: -280px;
+  width: 280px;
+  height: 100%;
+  background: var(--bg2);
+  border-right: 1px solid var(--border);
+  z-index: 150;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+  padding: 4.5rem 0 2rem;
+  padding-top: calc(4.5rem + env(safe-area-inset-top));
+  padding-bottom: calc(2rem + env(safe-area-inset-bottom));
+  padding-left: env(safe-area-inset-left);
+}
+
+.drawer.open {
+  transform: translateX(280px);
+}
+
+.drawer-btn {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.9rem 1.5rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s;
+  -webkit-tap-highlight-color: transparent;
+  border-left: 3px solid transparent;
+  min-height: 44px;
+}
+
+.drawer-btn:hover,
+.drawer-btn:active {
+  background: rgba(0,212,170,0.08);
+  color: var(--white);
+}
+
+.drawer-btn.active {
+  color: var(--accent);
+  border-left-color: var(--accent);
+  background: rgba(0,212,170,0.05);
+}
+
 /* Navigation */
 .nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(10,14,23,0.85);
+  background: var(--nav-bg);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
@@ -193,7 +445,7 @@ body {
 .nav-scroll::-webkit-scrollbar { display: none; }
 
 .nav-inner {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   gap: 0;
@@ -212,12 +464,12 @@ body {
 
 .nav-fade-left {
   left: 0;
-  background: linear-gradient(90deg, rgba(10,14,23,0.95), transparent);
+  background: linear-gradient(90deg, var(--nav-fade-l), transparent);
 }
 
 .nav-fade-right {
   right: 0;
-  background: linear-gradient(-90deg, rgba(10,14,23,0.95), transparent);
+  background: linear-gradient(-90deg, var(--nav-fade-r), transparent);
 }
 
 .nav-fade-left.visible,
@@ -243,7 +495,7 @@ body {
 
 /* Sections */
 .container {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -300,7 +552,7 @@ section {
 .cat-card:hover {
   border-color: var(--accent);
   transform: translateY(-4px);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  box-shadow: 0 20px 60px var(--card-hover-shadow);
 }
 
 .cat-card-header {
@@ -346,18 +598,18 @@ section {
   color: var(--text2);
   padding: 0.6rem 1rem;
   text-align: left;
-  background: rgba(0,0,0,0.2);
+  background: var(--table-head-bg);
   border-top: 1px solid var(--border);
 }
 
 .cat-table td {
   font-size: 0.82rem;
   padding: 0.65rem 1rem;
-  border-top: 1px solid rgba(255,255,255,0.03);
+  border-top: 1px solid var(--table-row-border);
   vertical-align: top;
 }
 
-.cat-table tr:hover td { background: rgba(0,212,170,0.03); }
+.cat-table tr:hover td { background: var(--table-hover); }
 
 .company-name {
   font-weight: 600;
@@ -406,7 +658,7 @@ section {
   transform: translateY(10px);
   transition: all 0.3s;
   z-index: 99;
-  box-shadow: 0 4px 20px rgba(0,212,170,0.3);
+  box-shadow: 0 4px 20px var(--scroll-top-shadow);
   -webkit-tap-highlight-color: transparent;
   padding-bottom: env(safe-area-inset-bottom);
 }
@@ -527,6 +779,49 @@ section:empty {
   margin-top: 6px;
 }
 
+/* Trend cards */
+.trend-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.5rem;
+}
+
+.trend-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.3s;
+  border-left: 3px solid var(--trend);
+}
+
+.trend-card:hover {
+  border-color: var(--trend);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px var(--card-hover-shadow);
+}
+
+.trend-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.6rem;
+}
+
+.trend-card p {
+  font-size: 0.82rem;
+  color: var(--text2);
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+}
+
+.trend-companies {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--trend);
+  margin-top: 0.5rem;
+}
+
 /* Schedule */
 .schedule-grid {
   display: grid;
@@ -584,6 +879,50 @@ section:empty {
   line-height: 1.7;
 }
 
+/* Notes */
+.notes-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.notes-box h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.notes-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.notes-box li {
+  font-size: 0.82rem;
+  color: var(--text2);
+  line-height: 1.7;
+  padding: 0.3rem 0;
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.notes-box li::before {
+  content: '>';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-weight: 600;
+}
+
+.notes-box a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
 /* 2026 New */
 .new-badge {
   display: inline-block;
@@ -625,6 +964,7 @@ section:empty {
   section { padding: 3rem 0; }
   .cat-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
   .schedule-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .trend-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
   .hero-meta { gap: 1rem; }
   .arch-layer { padding: 1.2rem 1.5rem; gap: 1rem; }
   .top10-list { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
@@ -649,7 +989,12 @@ section:empty {
   .section-header { margin-bottom: 2rem; }
   .section-desc { font-size: 0.9rem; }
 
-  /* Navigation */
+  /* Hamburger + Drawer visible */
+  .hamburger { display: flex; }
+  .nav { display: none; }
+  .theme-toggle { top: 1rem; right: 1rem; width: 36px; height: 36px; font-size: 1rem; }
+
+  /* Navigation (hidden on mobile, replaced by drawer) */
   .nav-scroll { padding: 0 0.5rem; }
   .nav-btn { padding: 0.8rem 0.7rem; font-size: 0.73rem; min-height: 44px; }
 
@@ -721,9 +1066,16 @@ section:empty {
   .arch-label { min-width: auto; }
   .arch-chip { font-size: 0.72rem; padding: 0.3rem 0.6rem; }
 
+  /* Trends */
+  .trend-grid { grid-template-columns: 1fr; }
+  .trend-card { padding: 1.2rem; }
+
   /* Schedule */
   .schedule-grid { grid-template-columns: 1fr; }
   .schedule-card { padding: 1.5rem; }
+
+  /* Notes */
+  .notes-box { padding: 1.5rem; }
 
   /* Footer */
   .footer { padding: 2rem 0; padding-bottom: calc(2rem + env(safe-area-inset-bottom)); }
@@ -763,6 +1115,9 @@ section:empty {
   .schedule-card h4 { font-size: 1rem; }
   .schedule-card p { font-size: 0.8rem; }
 
+  .trend-card h4 { font-size: 0.92rem; }
+  .trend-card p { font-size: 0.78rem; }
+
   .arch-chip { font-size: 0.68rem; padding: 0.25rem 0.5rem; }
   .arch-label { font-size: 0.65rem; }
 
@@ -790,6 +1145,7 @@ section:empty {
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   .top10-list { grid-template-columns: repeat(2, 1fr); }
   .schedule-grid { grid-template-columns: repeat(2, 1fr); }
+  .trend-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ═══════════════════════════════════════════
@@ -799,6 +1155,7 @@ section:empty {
   .cat-card:hover { border-color: var(--border); transform: none; box-shadow: none; }
   .top10-item:hover { border-color: var(--border); transform: none; }
   .schedule-card:hover { border-color: var(--border); transform: none; }
+  .trend-card:hover { border-color: var(--border); border-left-color: var(--trend); transform: none; box-shadow: none; }
   .cat-table tr:hover td { background: none; }
   .nav-btn:hover { color: var(--text2); }
   .nav-btn.active:hover { color: var(--accent); }
@@ -811,21 +1168,68 @@ section:empty {
    인쇄
    ═══════════════════════════════════════════ */
 @media print {
-  .nav, .scroll-top { display: none !important; }
+  .nav, .scroll-top, .hamburger, .drawer, .drawer-overlay, .theme-toggle { display: none !important; }
   .hero { min-height: auto; padding: 2rem; }
   .hero-grid, .hero::before { display: none; }
-  body { background: #fff; color: #222; }
-  .cat-card, .top10-item, .schedule-card, .arch-layer { border-color: #ccc; background: #fff; }
+  body { background: #fff; color: #222; padding: 0; }
+  .container { max-width: 100%; }
+  .cat-card, .top10-item, .schedule-card, .arch-layer, .trend-card, .notes-box { border-color: #ccc; background: #fff; }
+  .section-title, .cat-card-header h3 { color: #111; }
   .company-name { color: #111; }
   .cat-table thead { display: table-header-group; }
   .cat-table, .cat-table tbody, .cat-table tr, .cat-table td { display: revert; }
   .cat-table td::before { display: none; }
+  .cat-table th { background: #f0f0f0; color: #333; }
+  .cat-table td { border-color: #ddd; color: #333; }
   section { page-break-inside: avoid; }
+  .cat-card { page-break-inside: avoid; }
   .footer { padding-bottom: 1rem; }
+  .hero h1 span { -webkit-text-fill-color: #111; }
+  .hero-badge, .section-tag { border-color: #ccc; background: #f5f5f5; color: #333; }
+  .new-badge { background: #e0e0e0; color: #333; }
+  a { color: #0066cc; }
+  .arch-chip { background: #f0f0f0; border-color: #ccc; color: #333; }
+  .top10-rank { color: #333 !important; }
+  .trend-card { border-left-color: #999; }
+}
+
+/* Light mode scrollbar */
+[data-theme="light"] ::-webkit-scrollbar-track { background: var(--bg); }
+[data-theme="light"] ::-webkit-scrollbar-thumb { background: var(--accent); }
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) ::-webkit-scrollbar-track { background: #f5f7fa; }
+  :root:not([data-theme="dark"]) ::-webkit-scrollbar-thumb { background: #00b894; }
 }
 </style>
 </head>
 <body>
+
+<!-- Theme toggle -->
+<button class="theme-toggle" id="themeToggle" aria-label="테마 전환">🌙</button>
+
+<!-- Hamburger (mobile) -->
+<button class="hamburger" id="hamburgerBtn" aria-label="메뉴 열기">
+  <span class="hamburger-line"></span>
+</button>
+
+<!-- Drawer overlay -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+
+<!-- Drawer navigation (mobile) -->
+<nav class="drawer" id="drawer">
+  <button class="drawer-btn active" data-target="#overview">1. 행사개요</button>
+  <button class="drawer-btn" data-target="#gripper">2. 그리퍼</button>
+  <button class="drawer-btn" data-target="#cobot">3. 로봇팔/협동로봇</button>
+  <button class="drawer-btn" data-target="#amr">4. AMR/AGV</button>
+  <button class="drawer-btn" data-target="#ailogistics">5. AI 물류 자동화</button>
+  <button class="drawer-btn" data-target="#aisorting">6. AI 선별 자동화</button>
+  <button class="drawer-btn" data-target="#vision">7. 비전 선별 기술</button>
+  <button class="drawer-btn" data-target="#aiplc">8. AI PLC 통합</button>
+  <button class="drawer-btn" data-target="#smartfarm">9. 스마트팜 기술</button>
+  <button class="drawer-btn" data-target="#trends">10. 주요 트렌드</button>
+  <button class="drawer-btn" data-target="#topcompanies">11. 핵심 주목 기업</button>
+  <button class="drawer-btn" data-target="#schedule">12. 참관 일정</button>
+</nav>
 
 <!-- Hero -->
 <div class="hero">
@@ -842,22 +1246,23 @@ section:empty {
   </div>
 </div>
 
-<!-- Navigation -->
+<!-- Navigation (12개 항목) -->
 <nav class="nav" id="nav">
   <div class="nav-fade-left" id="navFadeL"></div>
   <div class="nav-scroll" id="navScroll">
     <div class="nav-inner">
-      <button class="nav-btn active" onclick="scrollTo_('#overview')">개요</button>
-      <button class="nav-btn" onclick="scrollTo_('#gripper')">🤏 그리퍼</button>
-      <button class="nav-btn" onclick="scrollTo_('#cobot')">🦾 로봇팔</button>
-      <button class="nav-btn" onclick="scrollTo_('#amr')">🚗 AMR/AGV</button>
-      <button class="nav-btn" onclick="scrollTo_('#ailogistics')">📦 AI물류</button>
-      <button class="nav-btn" onclick="scrollTo_('#aisorting')">🎯 AI선별</button>
-      <button class="nav-btn" onclick="scrollTo_('#vision')">👁️ 비전</button>
-      <button class="nav-btn" onclick="scrollTo_('#aiplc')">⚙️ AI PLC</button>
-      <button class="nav-btn" onclick="scrollTo_('#smartfarm')">🌱 스마트팜</button>
-      <button class="nav-btn" onclick="scrollTo_('#strategy')">🏆 종합전략</button>
-      <button class="nav-btn" onclick="scrollTo_('#schedule')">📅 참관일정</button>
+      <button class="nav-btn active" onclick="scrollTo_('#overview')">1.행사개요</button>
+      <button class="nav-btn" onclick="scrollTo_('#gripper')">2.그리퍼</button>
+      <button class="nav-btn" onclick="scrollTo_('#cobot')">3.로봇팔</button>
+      <button class="nav-btn" onclick="scrollTo_('#amr')">4.AMR/AGV</button>
+      <button class="nav-btn" onclick="scrollTo_('#ailogistics')">5.AI물류</button>
+      <button class="nav-btn" onclick="scrollTo_('#aisorting')">6.AI선별</button>
+      <button class="nav-btn" onclick="scrollTo_('#vision')">7.비전</button>
+      <button class="nav-btn" onclick="scrollTo_('#aiplc')">8.AI PLC</button>
+      <button class="nav-btn" onclick="scrollTo_('#smartfarm')">9.스마트팜</button>
+      <button class="nav-btn" onclick="scrollTo_('#trends')">10.트렌드</button>
+      <button class="nav-btn" onclick="scrollTo_('#topcompanies')">11.주목기업</button>
+      <button class="nav-btn" onclick="scrollTo_('#schedule')">12.참관일정</button>
     </div>
   </div>
   <div class="nav-fade-right visible" id="navFadeR"></div>
@@ -865,11 +1270,11 @@ section:empty {
 
 <div class="container">
 
-<!-- Overview -->
+<!-- 1. 행사개요 (Overview) -->
 <section id="overview">
   <div class="section-header">
-    <div class="section-tag" style="background:rgba(0,212,170,0.1);color:var(--accent);">Exhibition Overview</div>
-    <div class="section-title">전시회 개요 & 조사 방법</div>
+    <div class="section-tag" style="background:rgba(0,212,170,0.1);color:var(--accent);">1. Exhibition Overview</div>
+    <div class="section-title">행사개요</div>
     <div class="section-desc">ITES 2026은 정밀 제조 + 산업급 AI 응용 + 구현지능(Embodied Intelligence) 산업체인을 핵심 테마로, 중국 화남지역 최대 규모 산업 전시회입니다.</div>
   </div>
 
@@ -904,12 +1309,22 @@ section:empty {
 
 <div id="categories-container"></div>
 
-<!-- Strategy -->
-<section id="strategy">
+<!-- 10. 주요 트렌드 (Trends) -->
+<section id="trends">
   <div class="section-header">
-    <div class="section-tag" style="background:rgba(255,211,42,0.1);color:var(--yellow);">Strategy</div>
-    <div class="section-title">플랫폼 아키텍처 & TOP 10</div>
-    <div class="section-desc">ITES 2026 참가업체 기술 기반 '로봇 자동화 스마트팜 운영 플랫폼' 기술 스택</div>
+    <div class="section-tag" style="background:rgba(192,132,252,0.1);color:var(--trend);">10. Key Trends</div>
+    <div class="section-title">📊 주요 트렌드</div>
+    <div class="section-desc">ITES 2026 참가업체 및 기술 데이터를 기반으로 도출한 스마트팜 자동화 분야 8대 핵심 트렌드</div>
+  </div>
+  <div class="trend-grid" id="trendGrid"></div>
+</section>
+
+<!-- 11. 핵심 주목 기업 (Top Companies) -->
+<section id="topcompanies">
+  <div class="section-header">
+    <div class="section-tag" style="background:rgba(255,211,42,0.1);color:var(--yellow);">11. Key Companies</div>
+    <div class="section-title">🏆 핵심 주목 기업</div>
+    <div class="section-desc">ITES 2026 참가업체 기술 기반 '로봇 자동화 스마트팜 운영 플랫폼' 기술 스택 및 TOP 10</div>
   </div>
 
   <div class="arch-stack">
@@ -967,11 +1382,11 @@ section:empty {
   <div class="top10-list" id="top10"></div>
 </section>
 
-<!-- Schedule -->
+<!-- 12. 참관 일정 및 전략 (Schedule & Strategy) -->
 <section id="schedule">
   <div class="section-header">
-    <div class="section-tag" style="background:rgba(79,172,254,0.1);color:var(--blue);">Schedule</div>
-    <div class="section-title">📅 4일 참관 전략</div>
+    <div class="section-tag" style="background:rgba(79,172,254,0.1);color:var(--blue);">12. Schedule & Strategy</div>
+    <div class="section-title">📅 참관 일정 및 전략</div>
   </div>
   <div class="schedule-grid">
     <div class="schedule-card">
@@ -995,6 +1410,17 @@ section:empty {
       <p>Festo 바이오닉 농업, Basler 하이퍼스펙트럴, Hypersen 힘/토크 센서 상담. 핵심 업체 후속 미팅 확정, 샘플·견적 요청, 파트너십 논의.</p>
     </div>
   </div>
+
+  <div class="notes-box">
+    <h4>📋 참고사항</h4>
+    <ul>
+      <li>본 보고서는 ITES 공식 사이트, 2024~2026년 참가업체 DB, 전시회 리뷰 기사, 산업 분석 자료를 기반으로 AI 에이전트 8개가 병렬 조사한 결과입니다.</li>
+      <li><strong>ITES 2026 참가 확인 업체:</strong> Inspire Robots (2-D02), Schmalz, PaXini, ZengGuang, Neurocean, Linghang, Flexiv, FANUC, Dobot, Realman, JAKA, FAIRINO, Siasun, Kawasaki, Keyence, LMI Technologies (1-A58), OPT Machine Vision (10-G71), SmartMore, Hexagon (5-H01), CKVision, Siemens, Mitsubishi Electric, Leisai (3-M01), ZMotion (9-F04), Hypersen 등</li>
+      <li>일부 기업(DJI, XAG, Sananbio 등)은 ITES에 직접 참가하지 않을 수 있으나, 스마트팜 적용 가능성이 높아 참고용으로 포함했습니다.</li>
+      <li>참관 전 최신 참가업체 목록을 ITES 공식 사이트에서 반드시 확인하시기 바랍니다.</li>
+      <li>공식 사이트: <a href="https://global.iteschina.com" target="_blank" rel="noopener">global.iteschina.com</a> · 참관 등록 진행 중 (무료)</li>
+    </ul>
+  </div>
 </section>
 
 </div>
@@ -1009,10 +1435,10 @@ section:empty {
 </div>
 
 <script>
-// Data — 마크다운 보고서 전체 데이터 반영
+// Data — 마크다운 보고서 전체 데이터 반영 (항목 2~9: 8개 기술 카테고리)
 const categories = [
   {
-    id:'gripper', icon:'🤏', title:'로봇 그리퍼', sub:'Robot Grippers', color:'var(--gripper)',
+    id:'gripper', icon:'🤏', title:'그리퍼', sub:'2. Robot Grippers', color:'var(--gripper)',
     desc:'소프트 그리퍼, 진공 그리퍼, 적응형 그리퍼, 영민손(灵巧手) — 작물 손상 없는 수확 및 핸들링',
     companies:[
       {name:'Inspire Robots (因时机器人)',prod:'FTP 5지 영민손 (6DoF, 790g, 촉각센서 12모듈, 핑거팁 3kg), RH56 상용 영민손',apply:'촉각 피드백 기반 딸기/토마토 섬세 파지, 인형 로봇 수확 핸드'},
@@ -1028,7 +1454,7 @@ const categories = [
     tip:'SRT 불가사리형 소프트 그리퍼는 농업 적용 명시 타겟, 과실 무손상 수확 실증. PaXini 6D 촉각센서로 과실 숙도/경도 감지 → 선택적 수확 판단. RoChU FDA/EC 식품 안전 인증 보유.'
   },
   {
-    id:'cobot', icon:'🦾', title:'로봇팔/협동로봇', sub:'Robot Arms & Cobots', color:'var(--cobot)',
+    id:'cobot', icon:'🦾', title:'로봇팔/협동로봇', sub:'3. Robot Arms & Cobots', color:'var(--cobot)',
     desc:'수확, 방제, 전정 등 농작업에 적합한 협동로봇 팔',
     companies:[
       {name:'Flexiv (非夕科技)',prod:'Rizon 4s/10 적응형 7축 (0.03N 힘 감지, IP65), 하이브리드 모션/힘 제어',apply:'7축+적응형 힘 제어 비정형 수확, IP65 온실 습윤 환경 대응'},
@@ -1044,7 +1470,7 @@ const categories = [
     tip:'FAIRINO FR20: IP66 최고 방수등급 + 1854mm 도달 → 실외/습윤 농업 최적. Flexiv Rizon: 7축+적응형 힘 제어+IP65 → 정밀 수확 최적. Realman RM75-B: 자중 7.2kg 초경량 → AMR 탑재 이동형 수확.'
   },
   {
-    id:'amr', icon:'🚗', title:'AMR/AGF/AGV', sub:'Autonomous Mobile Robots', color:'var(--amr)',
+    id:'amr', icon:'🚗', title:'AMR/AGF/AGV', sub:'4. Autonomous Mobile Robots', color:'var(--amr)',
     desc:'온실 내 자율이동 운반 로봇, 무인 지게차, 물류 자동화',
     companies:[
       {name:'SEER Robotics (仙工智能)',prod:'SRC 범용 AMR 제어기 (글로벌 출하 1위), AMB-300 SLAM, SSR-1400 리치트럭',apply:'SRC로 농업용 맞춤 AMR 자체 개발, 옴니 이동 좁은 온실'},
@@ -1060,7 +1486,7 @@ const categories = [
     tip:'SEER Robotics: ITES 5년 연속 참가, SRC 범용 제어기로 농업용 맞춤 AMR 개발 가능. Quicktron M60: 2m/s 고속 + 컴팩트 → 온실 좁은 통로 고속 운반. HAI Robotics ACR: 12m 높이 케이스 핸들링.'
   },
   {
-    id:'ailogistics', icon:'📦', title:'AI 물류 자동화', sub:'AI Logistics Automation', color:'var(--ailogistics)',
+    id:'ailogistics', icon:'📦', title:'AI 물류 자동화', sub:'5. AI Logistics Automation', color:'var(--ailogistics)',
     desc:'AI 기반 물류, 팔레타이징, 콜드체인 자동화, WMS',
     companies:[
       {name:'KUKA (쿠카)',prod:'KR QUANTEC PA (40~1,300kg), Arctic (-30°C~+10°C 전용, 보호복 불필요), PalletTech',apply:'Arctic으로 냉장 창고 -25°C 팔레타이징, 콜드체인 무중단'},
@@ -1076,7 +1502,7 @@ const categories = [
     tip:'KUKA Arctic: 세계 유일 -30°C 전용 팔레타이징 → 농산물 콜드체인 핵심. Geek+ SkyCube: -18°C~+5°C 다온도 존. Siemens INTRALOG WMS + KUKA + Geek+ AMR → 수확~출하 전 과정 자동화.'
   },
   {
-    id:'aisorting', icon:'🎯', title:'AI 선별 자동화', sub:'AI Sorting Automation', color:'var(--aisorting)',
+    id:'aisorting', icon:'🎯', title:'AI 선별 자동화', sub:'6. AI Sorting Automation', color:'var(--aisorting)',
     desc:'AI 기반 농산물 선별, 등급 판정, 품질 검사',
     companies:[
       {name:'SmartMore (思谋科技)',prod:'SMore ViMo AI 플랫폼 (제로코드 비전검사), IndustryGPT 산업 대형모델, AI-AOI',apply:'제로코드 농산물 분류/결함 검출, 근경류 뿌리·줄기 품질 등급'},
@@ -1092,7 +1518,7 @@ const categories = [
     tip:'SmartMore IndustryGPT: 산업 대형모델 비정형 결함 검출 → 전통 비전 한계 돌파. Cognex ViDi: 수십 장 학습으로 분류 → 다품종 소량 최적. DLCV.AI: 100장→1분 학습 → 품종 변경 즉시 대응.'
   },
   {
-    id:'vision', icon:'👁️', title:'비전 선별 기술', sub:'Vision Sorting Technology', color:'var(--vision)',
+    id:'vision', icon:'👁️', title:'비전 선별 기술', sub:'7. Vision Sorting Technology', color:'var(--vision)',
     desc:'머신비전 카메라, 하이퍼스펙트럴 이미징, 3D 스캐닝, 비전 조명',
     companies:[
       {name:'Keyence (키엔스)',prod:'라인스캔 (67MP, 6.1μs/line, 165kHz), CV-X AI 비전, LJ-X8000 3D 프로파일러',apply:'고속 컨베이어 라인스캔 농산물 연속 외관 검사, 3D 형상 계측'},
@@ -1108,7 +1534,7 @@ const categories = [
     tip:'OPT Machine Vision (ITES 2026 확인): 글로벌 비전 조명 핵심 공급사, 30,000+ 맞춤. Basler 하이퍼스펙트럴: 육안/RGB 불가 조기 병해 감지. CCS Agri-Bio LED: 농산물 검사 전용 다파장 조명.'
   },
   {
-    id:'aiplc', icon:'⚙️', title:'AI PLC 통합 플랫폼', sub:'AI PLC Integration Platform', color:'var(--aiplc)',
+    id:'aiplc', icon:'⚙️', title:'AI PLC 통합 플랫폼', sub:'8. AI PLC Integration Platform', color:'var(--aiplc)',
     desc:'AI 기능 내장 PLC, IoT 플랫폼, SCADA, MES — 온실 통합 제어',
     companies:[
       {name:'Siemens (지멘스)',prod:'SIMATIC S7-1200/1500, IOT2050 엣지 (LoRaWAN), TIA Portal, MindSphere, WinCC',apply:'S7-1200 온실 환경제어 공식 예제 제공, IOT2050 LoRaWAN 센서 연동, CEA 전용'},
@@ -1124,7 +1550,7 @@ const categories = [
     tip:'Haiwell A8 IoT PLC: 채소 온실 IoT 관리 시스템 실증 완료 → 스마트팜 직접 레퍼런스. Advantech WISE-PaaS: 스페인 온실 물 95% 절감 실증. Siemens S7-1200 온실 환경제어 공식 예제 제공.'
   },
   {
-    id:'smartfarm', icon:'🌱', title:'스마트팜 관련 기술', sub:'Smart Farm Technologies', color:'var(--smartfarm)',
+    id:'smartfarm', icon:'🌱', title:'스마트팜 관련 기술', sub:'9. Smart Farm Technologies', color:'var(--smartfarm)',
     desc:'환경 제어, 양액 시스템, 식물공장, 드론 방제, 디지털 트윈, 센서',
     companies:[
       {name:'Siemens (지멘스)',prod:'디지털 트윈 (NX, Xcelerator), digiCEAd 디지털 온실, MindSphere IoT',apply:'온실 디지털 트윈 구축, 80 Acres Farms 수직농장 파트너, 생육 시뮬레이션 최적 제어'},
@@ -1141,6 +1567,18 @@ const categories = [
   }
 ];
 
+// 10. 주요 트렌드 데이터
+const trends = [
+  {title:'구현지능(Embodied Intelligence) 및 인형로봇 산업 부상', desc:'ITES 2026에서 인형 로봇 40+사 전용 구역 최초 신설. 영민손/촉각센서 기술이 연구 → 산업 양산 단계로 진입. 스마트팜에서 인형 로봇이 비정형 농작업을 자율 수행하는 시나리오가 가시화.', companies:'Inspire Robots, PaXini, Neurocean'},
+  {title:'적응형 힘 제어 로봇의 농업 적용 확대', desc:'0.01~0.03N급 정밀 힘 제어 기술이 ITES 참가업체 전반에 확산. 과실 손상 방지와 확실한 파지를 동시에 구현하는 핵심 기술로 자리잡으며, 농업 수확 로봇 상용화를 가속.', companies:'Flexiv, ZengGuang, Hypersen, Keli Sensing, DH-Robotics'},
+  {title:'산업 대형모델(IndustryGPT/Mech-GPT) 제조·농업 적용', desc:'규칙 기반 비전 검사의 한계를 넘어, 비정형 결함을 자연어로 기술하고 자율 판단하는 산업 대형모델 등장. 농산물 선별에서 품종 변경·비정형 결함 대응이 극적으로 단순화.', companies:'SmartMore (IndustryGPT), Mech-Mind (Mech-GPT)'},
+  {title:'콜드체인 다온도 존(Multi-Temperature Zone) 자동화', desc:'-18°C~+5°C 다온도 존 자동 팔레트, -30°C 전용 로봇 등 극한 저온 자동화 솔루션 다수 출현. 농산물 냉동/냉장/상온 통합 물류가 단일 시스템에서 가능해짐.', companies:'Geek+ (SkyCube), KUKA (Arctic), Mushiny, Multiway'},
+  {title:'소프트 그리퍼의 농업 타겟 명시화', desc:'SRT가 농업 적용을 공식 타겟으로 명시하고 과실 무손상 수확 실증. RoChU는 FDA/EC-1935 식품 안전 인증 확보. 연구 수준 → 실질적 농업 상용 솔루션으로 전환 중.', companies:'SRT, RoChU, Festo, Schmalz'},
+  {title:'디지털 트윈 CEA(제어환경농업) 전용 솔루션', desc:'Siemens digiCEAd 디지털 온실, 80 Acres Farms 수직농장 파트너십으로 CEA 전용 디지털 트윈 상용화. 범용 IoT 플랫폼 → 농업 특화 CEA 플랫폼 전환 가속.', companies:'Siemens (digiCEAd), Advantech (WISE-PaaS), Haiwell'},
+  {title:'엣지 AI 비전의 현장 배치 확산', desc:'딥러닝칩 내장 AI 스마트 카메라, 26 TOPS 엣지 AI 등 현장에서 직접 AI 추론 수행하는 솔루션 급증. 클라우드 의존 없이 실시간 농산물 선별·병해충 감지 가능.', companies:'SmartMore (VN4000), Advantech, DLCV.AI, Cognex'},
+  {title:'노코드/제로코드 비전 플랫폼의 대중화', desc:'제로코드 비전검사, 드래그앤드롭 노코드, 100장 학습 등 IT 전문 인력 없이 비전 검사 시스템을 구축할 수 있는 플랫폼이 주류로 부상. 농업 현장 IT 인력 부족 문제 해결 핵심.', companies:'SmartMore (ViMo), CKVision, Cognex (ViDi), DLCV.AI'}
+];
+
 const top10 = [
   {rank:1, name:'Flexiv', flag:'🇨🇳', field:'로봇팔·적응형', reason:'7축 적응형 힘 제어 + IP65, ITES 연속 참가, 수확 로봇 최적'},
   {rank:2, name:'Siemens', flag:'🇩🇪', field:'AI PLC·물류·스마트팜', reason:'S7-1200 온실 예제 공식 제공, digiCEAd CEA 전용, MindSphere 디지털 트윈'},
@@ -1154,7 +1592,7 @@ const top10 = [
   {rank:10, name:'Advantech', flag:'🇹🇼', field:'AI PLC·스마트팜', reason:'스페인 온실 프로젝트 실증, LoRaWAN+WISE-PaaS Edge AI'}
 ];
 
-// Render categories
+// Render categories (항목 2~9)
 const container = document.getElementById('categories-container');
 categories.forEach(cat => {
   const rows = cat.companies.map(c => `
@@ -1181,7 +1619,18 @@ categories.forEach(cat => {
     </section>`;
 });
 
-// Render TOP 10
+// Render Trends (항목 10)
+const trendGrid = document.getElementById('trendGrid');
+trends.forEach((t, i) => {
+  trendGrid.innerHTML += `
+    <div class="trend-card">
+      <h4>${i+1}. ${t.title}</h4>
+      <p>${t.desc}</p>
+      <div class="trend-companies">📌 ${t.companies}</div>
+    </div>`;
+});
+
+// Render TOP 10 (항목 11)
 const top10El = document.getElementById('top10');
 const rankColors = ['var(--yellow)','#C0C0C0','#CD7F32','var(--accent)','var(--blue)','var(--purple)','var(--orange)','var(--pink)','var(--cyan)','var(--text2)'];
 top10.forEach((t,i) => {
@@ -1220,8 +1669,8 @@ navScroll?.addEventListener('scroll', updateNavFades, {passive:true});
 window.addEventListener('resize', updateNavFades);
 updateNavFades();
 
-// Active nav on scroll + auto scroll nav into view
-const sections = ['overview','gripper','cobot','amr','ailogistics','aisorting','vision','aiplc','smartfarm','strategy','schedule'];
+// Active nav on scroll + auto scroll nav into view (12개 섹션)
+const sections = ['overview','gripper','cobot','amr','ailogistics','aisorting','vision','aiplc','smartfarm','trends','topcompanies','schedule'];
 const navBtns = document.querySelectorAll('.nav-btn');
 let lastCurrent = 0;
 window.addEventListener('scroll', () => {
@@ -1244,6 +1693,114 @@ const scrollTopBtn = document.getElementById('scrollTopBtn');
 window.addEventListener('scroll', () => {
   scrollTopBtn?.classList.toggle('visible', window.scrollY > 600);
 }, {passive:true});
+
+// ═══════════════════════════════════════════
+// Theme Toggle (Dark/Light)
+// ═══════════════════════════════════════════
+const themeToggle = document.getElementById('themeToggle');
+const themeColorMeta = document.getElementById('themeColor');
+
+function getSystemTheme() {
+  return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+}
+
+function applyTheme(theme) {
+  if (theme === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
+    themeToggle.textContent = '☀️';
+    themeColorMeta.setAttribute('content', '#f5f7fa');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    themeToggle.textContent = '🌙';
+    themeColorMeta.setAttribute('content', '#0a0e17');
+  }
+}
+
+// Init theme
+const savedTheme = localStorage.getItem('ites-theme');
+if (savedTheme) {
+  applyTheme(savedTheme);
+} else {
+  applyTheme(getSystemTheme());
+}
+
+themeToggle.addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme') || getSystemTheme();
+  const next = current === 'dark' ? 'light' : 'dark';
+  applyTheme(next);
+  localStorage.setItem('ites-theme', next);
+});
+
+// Listen for system theme changes
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+  if (!localStorage.getItem('ites-theme')) {
+    applyTheme(e.matches ? 'dark' : 'light');
+  }
+});
+
+// ═══════════════════════════════════════════
+// Hamburger + Drawer Navigation (Mobile)
+// ═══════════════════════════════════════════
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const drawer = document.getElementById('drawer');
+const drawerOverlay = document.getElementById('drawerOverlay');
+const drawerBtns = document.querySelectorAll('.drawer-btn');
+
+function openDrawer() {
+  hamburgerBtn.classList.add('open');
+  drawer.classList.add('open');
+  drawerOverlay.classList.add('visible');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeDrawer() {
+  hamburgerBtn.classList.remove('open');
+  drawer.classList.remove('open');
+  drawerOverlay.classList.remove('visible');
+  document.body.style.overflow = '';
+}
+
+hamburgerBtn.addEventListener('click', () => {
+  if (drawer.classList.contains('open')) {
+    closeDrawer();
+  } else {
+    openDrawer();
+  }
+});
+
+drawerOverlay.addEventListener('click', closeDrawer);
+
+drawerBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.getAttribute('data-target');
+    closeDrawer();
+    setTimeout(() => {
+      const el = document.querySelector(target);
+      if (el) {
+        const top = el.getBoundingClientRect().top + window.scrollY - 16;
+        window.scrollTo({top, behavior:'smooth'});
+      }
+    }, 100);
+  });
+});
+
+// Update drawer active state on scroll
+window.addEventListener('scroll', () => {
+  const y = window.scrollY + 120;
+  let current = 0;
+  sections.forEach((id, i) => {
+    const el = document.getElementById(id);
+    if (el && el.offsetTop <= y) current = i;
+  });
+  drawerBtns.forEach((b,i) => b.classList.toggle('active', i === current));
+}, {passive:true});
+
+// Close drawer on resize to desktop
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768) {
+    closeDrawer();
+  }
+});
 </script>
 
 </body>
