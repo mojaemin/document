@@ -1,127 +1,237 @@
 ---
-title: AW2026 (2026 스마트공장·자동화산업전) 참가업체 맵
+title: AW2026 스마트공장·자동화산업전 — 참가업체 조사 맵
 ---
-mindmap
-  root((AW2026<br/>코엑스 3/4~6<br/>24개국 500개사))
-    **로봇 그리퍼**
-      테솔로
-        델토 그리퍼 3F/5F
-        휴머노이드 핸드 DG-5F-S
-      씬그립
-        전동 그리퍼 옵티멈/이센셜
-        툴체인저
-      원익로보틱스
-        알레그로 핸드 V5 Sense
-        16DoF 촉각 센서
-      티로보틱스
-        TR-WORKS 휴머노이드 핸드
-      모베이스전자
-        택타일 센서 그리퍼
-      주강로보테크
-        공압 그리퍼 37년 업력
-    **로봇 팔 / 협동로봇**
-      화낙 FANUC
-        산업용 다관절 로봇
-      유니버설 로봇 UR
-        협동로봇 UR 시리즈
-      테크맨로봇
-        TM AI Cobot 비전내장
-      뉴로메카
-        Indy 시리즈
-        휴머노이드 에이르 EIR
-      씨메스 CMES
-        AI 디팔레타이징
-        AI 피스피킹
-        용접 로봇 가이던스
-      에이딘로보틱스
-        AIDIN Hand Gen2
-        6축 힘토크 센서
-      인아오리엔탈모터
-        KOVR 초소형 로봇
-    **물류 자동화**
-      현대글로비스
-        팔레트 셔틀
-        원키트 피킹
-        아틀라스 국내 최초 공개
-      현대무벡스
-        AMR 군집주행
-        옴니소터
-        AS/RS
-        3D 디지털트윈
-      아세테크 ASETEC
-        오토스토어 AutoStore
-        neXos 통합물류 플랫폼
-      티엑스알로보틱스 TXR
-        휠소터
-        싱귤레이터
-        셀루베이어
-      유진로봇
-        GoCart AMR 시리즈
-        3D ToF LiDAR
-      CJ올리브네트웍스
-        AI 비전검사
-        공정 무인화
-        MES
-    **AI 비전 선별**
-      세이지 SAIGE
-        SAIGE Vision
-        AI 에이전트 근본원인 진단
-      뉴로클 Neurocle
-        Neuro-X/T/R
-        오토딥러닝
-      라온피플
-        NAVI AI Pro 노코딩
-        ADC System
-      슈퍼브에이아이
-        ZERO 파운데이션 모델
-        Zero-shot 비전AI
-      브이원테크
-        withAI 딥러닝 검사
-      엘로이랩
-        초분광 AI 선별
-        화학 스펙트럼 분석
-      Basler
-        MDFI 시스템
-        디지털 트윈 비전
-      LUCID Vision Labs
-        3D ToF 카메라
-        25GigE 고속 카메라
-      뷰웍스
-        초고해상도 산업용 카메라
-    **무인 이송 AGV/AMR**
-      현대무벡스
-        AMR 5대 군집 퍼레이드
-        저상형 AGV
-      유진로봇
-        GoCart AMR
-      긱플러스 Geek+
-        글로벌 AMR 선도
-      다임리서치
-        다종 로봇 통합 관제
-    **무인 지게차**
-      에이로보틱스
-        LiDAR+SLAM 자율주행
-        +-10mm 정밀도
-      멀티웨이로보틱스
-        1000~5000kg급
-        클라우드 AI
-      모비우스 Mobyus
-        기존 지게차 자율주행 업그레이드
-      포테닛 Potenit
-        AFL 무인지게차
-    **PLC 통합 솔루션**
-      LS일렉트릭
-        PLC SU-CM70
-        AI 팩토리 패키지
-        최대 전시 270m2
-      로크웰 오토메이션
-        자율 제조 아키텍처
-        OT 보안
-      슈나이더 일렉트릭
-        EcoStruxure 개방형
-        소프트웨어 정의 자동화
-      엠투아이 M2I
-        HMI SCADA
-        스마트팩토리 플랫폼
-      VEICHI
-        PLC 인버터 서보
+
+graph TB
+    subgraph HEADER["🏭 AW2026 스마트공장·자동화산업전"]
+        direction LR
+        INFO["📅 2026.3.4~3.6 | 📍 서울 코엑스 전관(A·B·C·D홀)\n🏢 24개국 500개사·2,300부스 | 🤖 Physical AI·휴머노이드"]
+    end
+
+    subgraph PLATFORM["🧠 AI Platform — 통합 운영 플랫폼"]
+        P1["LS일렉트릭\nAI팩토리 + LLM 진단"]
+        P2["슈나이더\nEcoStruxure + AVEVA"]
+        P3["CJ올리브네트웍스\n에이전틱 AI"]
+    end
+
+    subgraph EXECUTION["⚙️ Execution — 실행 계층"]
+        direction LR
+        E1["FANUC CRX\n협동로봇 (8년 무보수)"]
+        E2["두산로보틱스\nM/H/A 시리즈"]
+        E3["뉴로메카 Indy\n피지컬 AI"]
+        E4["테크맨로봇\n내장 비전+AI"]
+    end
+
+    subgraph PERCEPTION["👁️ Perception — 인지 계층"]
+        direction LR
+        V1["코그넥스\nIn-Sight 3800 AI"]
+        V2["뷰웍스\nVT-16K TDI"]
+        V3["라온피플\nLLM+VLM 비전"]
+        V4["LMI Technologies\nGocator 3D"]
+    end
+
+    subgraph MOBILITY["🚗 Mobility — 이동 계층"]
+        direction LR
+        MB1["유진로봇\nGoCart AMR (2톤)"]
+        MB2["긱플러스\nP800 AMR"]
+        MB3["원익로보틱스\nAMMR 복합"]
+        MB4["빅웨이브\nSOLlink 통합관제"]
+    end
+
+    subgraph EDGE["📡 Edge Control — 현장 제어"]
+        direction LR
+        C1["LS일렉트릭\nSU-CM70 SW정의PLC"]
+        C2["싸이몬\nCICON AI Copilot"]
+        C3["로크웰\nControlLogix 5590"]
+        C4["파나소닉\nFP7 + MINAS A7"]
+    end
+
+    HEADER --> PLATFORM
+    PLATFORM --> EXECUTION
+    EXECUTION --> PERCEPTION
+    PERCEPTION --> MOBILITY
+    MOBILITY --> EDGE
+
+    subgraph FARM["🌿 스마트팜 8대 기술 항목"]
+        direction LR
+
+        subgraph GRIPPER["🤏 로봇 그리퍼"]
+            G1["테솔로 DG-5F\n20DoF 다관절"]
+            G2["슈말츠 mGrip\nAI 진공"]
+            G3["에이딘 Gen2\n촉각센서 16DoF"]
+            G4["온로봇 Soft\nFDA 식품등급"]
+            G5["코라스 MATC\n무공압 툴체인저"]
+            G6["메크마인드 Hand\nAI 비전+핸드"]
+            G7["조델 EPG\nIP65 전동"]
+            G8["씬그립\n적응형 그리퍼"]
+            G9["씨메스\n3D비전+AI 피킹"]
+        end
+
+        subgraph COBOT["🦾 로봇팔/협동로봇"]
+            CB1["FANUC CRX\n5~30kg 8년 무보수"]
+            CB2["두산 M/H/A\n국내1위 글로벌4위"]
+            CB3["테크맨 TM\n내장 비전+AI"]
+            CB4["뉴로메카 Indy\n스마트팜 전용"]
+            CB5["KUKA LBR iiwa\n7축 감응형"]
+            CB6["원익 AMMR\n로봇팔+AMR"]
+            CB7["유니버설 UR\nUR+ 에코시스템"]
+            CB8["제우스 SCARA\n±0.01mm"]
+            CB9["아이에이코리아\n전동 실린더"]
+        end
+
+        subgraph AMRSEC["🚗 AMR/AGF/AGV"]
+            A1["유진로봇 GoCart\n2톤 3D ToF"]
+            A2["긱플러스 P800\n글로벌 AMR 1위"]
+            A3["현대무벡스\nAGV 군집주행"]
+            A4["원익 AMMR\n메카넘 휠"]
+            A5["멀티웨이 AGF\n전방향 포크"]
+            A6["맥파이온\n모노레일"]
+            A7["마로로봇테크\n추종형 AMR"]
+            A8["마이루이\n잠입형 AMR"]
+            A9["빅웨이브\nSOLlink 관제"]
+            A10["현대차 MobED\nCES 최고혁신상"]
+        end
+
+        subgraph AILOG["📦 AI 물류 자동화"]
+            AL1["씨메스\n랜덤 팔레타이징"]
+            AL2["현대글로비스\nORCA WCS"]
+            AL3["현대무벡스\nAS/RS 디지털트윈"]
+            AL4["긱플러스\nSkyCube 4배밀도"]
+            AL5["TXR 휠소터\n시간당 5,000개"]
+            AL6["에이딘 피킹\n시간당 1,000개"]
+            AL7["아세테크\n오토스토어"]
+            AL8["랩투마켓\n모듈형 셔틀"]
+            AL9["에이딘 AIRO-One\nAI비전+그리퍼"]
+        end
+
+        subgraph AISORT["🎯 AI 선별 자동화"]
+            AS1["라온피플\n농진청 협약 AI"]
+            AS2["슈퍼브AI ZERO\n제로샷 비전"]
+            AS3["마키나락스\nRunway AI OS"]
+            AS4["뉴로클\n노코딩 오토딥러닝"]
+            AS5["포스로직\nFLImaging 2D/3D/AI"]
+            AS6["디플리\n음향AI 99.78%"]
+            AS7["피아이이\nAI 비파괴검사"]
+            AS8["CJ올리브네트웍스\n에이전틱 AI"]
+            AS9["에이아이웍스\nAI Agent"]
+        end
+
+        subgraph VISION["👁️ 비전 선별 기술"]
+            VS1["뷰웍스 TDI\n16K 라인스캔"]
+            VS2["코그넥스 3800\n분당 2,500개"]
+            VS3["키엔스 CV-X\nAI 바코드"]
+            VS4["LMI Gocator\n3D 프로파일"]
+            VS5["LUCID SWIR\n비파괴 내부품질"]
+            VS6["넥센서\n3D 광학계측"]
+            VS7["발루프\nIO-Link+비전"]
+            VS8["코어이미징\n비전 컴포넌트"]
+            VS9["씨메스 CubiMeazure\n3D 자동측정"]
+            VS10["바이렉스\nAuto Focus"]
+        end
+
+        subgraph AIPLC["⚙️ AI PLC 통합"]
+            AP1["LS SU-CM70\nSW정의 PLC"]
+            AP2["싸이몬 CICON\nAI Copilot"]
+            AP3["로크웰 5590\nAI 내재 PLC"]
+            AP4["슈나이더 EAE\n개방형 자동화"]
+            AP5["와고 Hub\n디지털트윈 3D"]
+            AP6["모벤시스 WMX\n소프트PLC 128축"]
+            AP7["파나소닉 GM1\nPLC+모션 통합"]
+            AP8["엠투아이\nHMI/SCADA"]
+            AP9["CJ올리브네트웍스\nMES+에이전틱AI"]
+        end
+
+        subgraph SMARTFARM["🌱 스마트팜 기술"]
+            SF1["그린플러스\n온실 1위 턴키"]
+            SF2["엔씽 CUBE\n모듈형 수직농장"]
+            SF3["팜에이트\n식물공장+로봇"]
+            SF4["아이오크롭스\nHERMAI AI로봇"]
+            SF5["에너틱스\nGS1등급 환경제어"]
+            SF6["비바엔에스\nIoT+AI 플랫폼"]
+            SF7["큐빅스\nKS표준 센서"]
+            SF8["우성하이텍\nFarmSys 31년"]
+            SF9["그린랩스\n팜모닝 90만+"]
+            SF10["넥센서\n3D 계측센서"]
+            SF11["파나소닉\nFA센서 풀라인업"]
+            SF12["오토닉스\nIO-Link 센서"]
+        end
+    end
+
+    EDGE --> FARM
+
+    subgraph TOP10["🏆 핵심 주목 기업 TOP 10"]
+        direction LR
+        T1["1. 원익로보틱스 🇰🇷\n로봇팔·AMR"]
+        T2["2. LS일렉트릭 🇰🇷\nAI PLC"]
+        T3["3. 씨메스 🇰🇷\n그리퍼·물류·비전"]
+        T4["4. 코그넥스 🇺🇸\n비전"]
+        T5["5. 두산로보틱스 🇰🇷\n로봇팔"]
+        T6["6. 유진로봇 🇰🇷\nAMR"]
+        T7["7. 테크맨로봇 🇹🇼\n로봇팔"]
+        T8["8. 라온피플 🇰🇷\nAI선별"]
+        T9["9. 싸이몬 🇰🇷\nAI PLC"]
+        T10["10. 그린플러스 🇰🇷\n스마트팜"]
+    end
+
+    FARM --> TOP10
+
+    subgraph SCHEDULE["📅 3일 참관 전략"]
+        direction LR
+        D1["Day1 3/4\n🦾 로봇팔·그리퍼\n+ 협동로봇 시연"]
+        D2["Day2 3/5\n👁️ 비전·AI 선별\n+ AMR/물류"]
+        D3["Day3 3/6\n⚙️ AI PLC·IoT\n+ 스마트팜·미팅"]
+        D1 --> D2 --> D3
+    end
+
+    TOP10 --> SCHEDULE
+
+    style HEADER fill:#1B4F72,stroke:#1B4F72,color:#fff
+    style INFO fill:#2E86C1,stroke:#2E86C1,color:#fff
+    style PLATFORM fill:#7D3C98,stroke:#7D3C98,color:#fff
+    style EXECUTION fill:#C0392B,stroke:#C0392B,color:#fff
+    style PERCEPTION fill:#E67E22,stroke:#E67E22,color:#fff
+    style MOBILITY fill:#2980B9,stroke:#2980B9,color:#fff
+    style EDGE fill:#27AE60,stroke:#27AE60,color:#fff
+    style FARM fill:#F4F6F7,stroke:#566573,color:#2C3E50
+    style GRIPPER fill:#D5F5E3,stroke:#27AE60,color:#1B4F72
+    style COBOT fill:#D6EAF8,stroke:#2E86C1,color:#1B4F72
+    style AMRSEC fill:#E8DAEF,stroke:#8E44AD,color:#1B4F72
+    style AILOG fill:#FDEBD0,stroke:#E67E22,color:#1B4F72
+    style AISORT fill:#FCF3CF,stroke:#F1C40F,color:#1B4F72
+    style VISION fill:#D1F2EB,stroke:#1ABC9C,color:#1B4F72
+    style AIPLC fill:#FADBD8,stroke:#E74C3C,color:#1B4F72
+    style SMARTFARM fill:#D5F5E3,stroke:#2ECC71,color:#1B4F72
+    style TOP10 fill:#FEF9E7,stroke:#F39C12,color:#1B4F72
+    style SCHEDULE fill:#EBF5FB,stroke:#3498DB,color:#1B4F72
+    style P1 fill:#A569BD,stroke:#7D3C98,color:#fff
+    style P2 fill:#A569BD,stroke:#7D3C98,color:#fff
+    style P3 fill:#A569BD,stroke:#7D3C98,color:#fff
+    style E1 fill:#EC7063,stroke:#C0392B,color:#fff
+    style E2 fill:#EC7063,stroke:#C0392B,color:#fff
+    style E3 fill:#EC7063,stroke:#C0392B,color:#fff
+    style E4 fill:#EC7063,stroke:#C0392B,color:#fff
+    style V1 fill:#F0B27A,stroke:#E67E22,color:#1B4F72
+    style V2 fill:#F0B27A,stroke:#E67E22,color:#1B4F72
+    style V3 fill:#F0B27A,stroke:#E67E22,color:#1B4F72
+    style V4 fill:#F0B27A,stroke:#E67E22,color:#1B4F72
+    style MB1 fill:#5DADE2,stroke:#2980B9,color:#fff
+    style MB2 fill:#5DADE2,stroke:#2980B9,color:#fff
+    style MB3 fill:#5DADE2,stroke:#2980B9,color:#fff
+    style MB4 fill:#5DADE2,stroke:#2980B9,color:#fff
+    style C1 fill:#58D68D,stroke:#27AE60,color:#1B4F72
+    style C2 fill:#58D68D,stroke:#27AE60,color:#1B4F72
+    style C3 fill:#58D68D,stroke:#27AE60,color:#1B4F72
+    style C4 fill:#58D68D,stroke:#27AE60,color:#1B4F72
+    style T1 fill:#F9E79F,stroke:#F1C40F,color:#1B4F72
+    style T2 fill:#F9E79F,stroke:#F1C40F,color:#1B4F72
+    style T3 fill:#F9E79F,stroke:#F1C40F,color:#1B4F72
+    style T4 fill:#F9E79F,stroke:#F1C40F,color:#1B4F72
+    style T5 fill:#F9E79F,stroke:#F1C40F,color:#1B4F72
+    style T6 fill:#F9E79F,stroke:#F1C40F,color:#1B4F72
+    style T7 fill:#F9E79F,stroke:#F1C40F,color:#1B4F72
+    style T8 fill:#F9E79F,stroke:#F1C40F,color:#1B4F72
+    style T9 fill:#F9E79F,stroke:#F1C40F,color:#1B4F72
+    style T10 fill:#F9E79F,stroke:#F1C40F,color:#1B4F72
+    style D1 fill:#AED6F1,stroke:#3498DB,color:#1B4F72
+    style D2 fill:#AED6F1,stroke:#3498DB,color:#1B4F72
+    style D3 fill:#AED6F1,stroke:#3498DB,color:#1B4F72

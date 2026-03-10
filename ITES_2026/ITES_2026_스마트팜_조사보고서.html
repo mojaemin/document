@@ -129,6 +129,7 @@ body {
 .hero h1 span {
   background: linear-gradient(135deg, var(--accent), var(--blue));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -176,6 +177,7 @@ body {
   z-index: 100;
   background: rgba(10,14,23,0.85);
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
   padding: 0;
 }
@@ -415,7 +417,7 @@ section {
   transform: translateY(0);
 }
 
-/* Empty anchor sections — remove padding */
+/* Empty anchor sections */
 section:empty {
   padding: 0;
   margin: 0;
@@ -834,9 +836,9 @@ section:empty {
   <div class="hero-meta">
     <div class="hero-meta-item">📅 <strong>2026.3.31 ~ 4.3</strong></div>
     <div class="hero-meta-item">📍 <strong>심천 국제컨벤션센터</strong></div>
-    <div class="hero-meta-item">🏢 <strong>1,658 참가업체</strong></div>
+    <div class="hero-meta-item">🏢 <strong>1,658사 · 16만m²</strong></div>
     <div class="hero-meta-item">🤖 <strong>구현지능 전용구역</strong> <span class="new-badge">NEW</span></div>
-    <div class="hero-meta-item">🧠 <strong>AI 에이전트 병렬조사</strong></div>
+    <div class="hero-meta-item">🧠 <strong>AI 에이전트 8개 병렬조사</strong></div>
   </div>
 </div>
 
@@ -868,7 +870,7 @@ section:empty {
   <div class="section-header">
     <div class="section-tag" style="background:rgba(0,212,170,0.1);color:var(--accent);">Exhibition Overview</div>
     <div class="section-title">전시회 개요 & 조사 방법</div>
-    <div class="section-desc">ITES 2026은 정밀 제조 + 산업급 AI 응용 + 구현지능(Embodied Intelligence) 산업체인을 핵심 테마로 내걸었습니다.</div>
+    <div class="section-desc">ITES 2026은 정밀 제조 + 산업급 AI 응용 + 구현지능(Embodied Intelligence) 산업체인을 핵심 테마로, 중국 화남지역 최대 규모 산업 전시회입니다.</div>
   </div>
 
   <div class="cat-grid">
@@ -878,10 +880,10 @@ section:empty {
         <div><h3>2026년 4대 하이라이트</h3><p>전년 대비 주요 변화</p></div>
       </div>
       <table class="cat-table">
-        <tr><td class="company-name">🤖 구현지능 전용구역 <span class="new-badge">NEW</span></td><td class="company-apply">인형 로봇 40+사, 핵심 부품~완성품 전시</td></tr>
-        <tr><td class="company-name">🚀 120+ 신제품 프리미어</td><td class="company-apply">60+ 브랜드 월드 최초 공개</td></tr>
-        <tr><td class="company-name">🧠 산업급 AI 응용</td><td class="company-apply">디지털 트윈, AI 공정 최적화</td></tr>
-        <tr><td class="company-name">🔗 1-Stop 바이어 매칭</td><td class="company-apply">산업체인 직접 연결 + 80+ 포럼</td></tr>
+        <tr><td class="company-name">🤖 구현지능 산업체인 전시 <span class="new-badge">NEW</span></td><td class="company-apply">인형 로봇 40+사 전용 구역 신설, 핵심 부품~완성품 전시</td></tr>
+        <tr><td class="company-name">🚀 120+ 신제품 월드 프리미어</td><td class="company-apply">60+ 선도 브랜드 CNC·자동화·스마트 제조 분야 최초 공개</td></tr>
+        <tr><td class="company-name">🧠 산업급 AI 기술 응용</td><td class="company-apply">정밀 제조와 AI의 융합 기술 집중 조명</td></tr>
+        <tr><td class="company-name">🔗 1-Stop 바이어 매칭</td><td class="company-apply">산업체인 직접 연결 + 80+ 포럼/세미나</td></tr>
       </table>
     </div>
 
@@ -891,11 +893,10 @@ section:empty {
         <div><h3>AI 병렬 에이전트 조사</h3><p>8개 기술 항목 동시 탐색</p></div>
       </div>
       <table class="cat-table">
-        <tr><td class="company-name">Agent 1</td><td class="company-apply">로봇 그리퍼 + 로봇팔/협동로봇</td></tr>
-        <tr><td class="company-name">Agent 2</td><td class="company-apply">AMR/AGF/AGV + AI 물류 자동화</td></tr>
-        <tr><td class="company-name">Agent 3</td><td class="company-apply">AI 선별 자동화 + 비전 선별 기술</td></tr>
-        <tr><td class="company-name">Agent 4</td><td class="company-apply">AI PLC 통합 플랫폼</td></tr>
-        <tr><td class="company-name">Agent 5</td><td class="company-apply">스마트팜 관련 기술 (환경제어, 방제, 디지털 트윈)</td></tr>
+        <tr><td class="company-name">Agent 1~2</td><td class="company-apply">로봇 그리퍼 (소프트/진공/영민손/툴체인저) + 로봇팔/협동로봇 (6축/7축/SCARA)</td></tr>
+        <tr><td class="company-name">Agent 3~4</td><td class="company-apply">AMR/AGF/AGV (자율이동/무인지게차) + AI 물류 자동화 (팔레타이징/WMS/콜드체인)</td></tr>
+        <tr><td class="company-name">Agent 5~6</td><td class="company-apply">AI 선별 자동화 (딥러닝/MLOps/대형모델) + 비전 선별 기술 (3D/하이퍼스펙트럴)</td></tr>
+        <tr><td class="company-name">Agent 7~8</td><td class="company-apply">AI PLC 통합 플랫폼 (PLC/IoT/SCADA/MES) + 스마트팜 관련 기술 (환경/드론/디지털트윈)</td></tr>
       </table>
     </div>
   </div>
@@ -925,45 +926,49 @@ section:empty {
     <div class="arch-layer" style="background:rgba(168,85,247,0.08);">
       <div class="arch-label" style="color:var(--purple);">AI Platform</div>
       <div class="arch-content">
-        <span class="arch-chip">Siemens MindSphere</span>
+        <span class="arch-chip">Siemens MindSphere/digiCEAd</span>
         <span class="arch-chip">Advantech WISE-PaaS</span>
-        <span class="arch-chip">SmartMore ViMo</span>
+        <span class="arch-chip">SmartMore ViMo/IndustryGPT</span>
       </div>
     </div>
     <div class="arch-layer" style="background:rgba(255,75,87,0.06);">
       <div class="arch-label" style="color:var(--red);">Execution</div>
       <div class="arch-content">
-        <span class="arch-chip">FANUC CRX</span>
         <span class="arch-chip">Flexiv Rizon</span>
+        <span class="arch-chip">FANUC CRX</span>
+        <span class="arch-chip">FAIRINO FR20 (IP66)</span>
+        <span class="arch-chip">Siasun GCR25</span>
         <span class="arch-chip">Realman RM75</span>
-        <span class="arch-chip">KUKA KMR iiwa</span>
       </div>
     </div>
     <div class="arch-layer" style="background:rgba(255,107,53,0.06);">
       <div class="arch-label" style="color:var(--orange);">Perception</div>
       <div class="arch-content">
         <span class="arch-chip">Cognex ViDi</span>
-        <span class="arch-chip">Hikrobot MV</span>
-        <span class="arch-chip">Basler Hyperspectral</span>
+        <span class="arch-chip">Keyence CV-X</span>
+        <span class="arch-chip">Basler 하이퍼스펙트럴</span>
         <span class="arch-chip">LMI Gocator 3D</span>
+        <span class="arch-chip">SmartMore VN4000</span>
       </div>
     </div>
     <div class="arch-layer" style="background:rgba(0,229,255,0.06);">
       <div class="arch-label" style="color:var(--cyan);">Mobility</div>
       <div class="arch-content">
         <span class="arch-chip">Hikrobot AMR</span>
-        <span class="arch-chip">Geek+ P500</span>
         <span class="arch-chip">SEER SRC</span>
-        <span class="arch-chip">KUKA KMP</span>
+        <span class="arch-chip">Quicktron M60</span>
+        <span class="arch-chip">Geek+ SkyCube</span>
+        <span class="arch-chip">VisionNav 자율 포크리프트</span>
       </div>
     </div>
     <div class="arch-layer" style="background:rgba(0,212,170,0.06);">
       <div class="arch-label" style="color:var(--accent);">Edge Control</div>
       <div class="arch-content">
-        <span class="arch-chip">Siemens SIMATIC</span>
+        <span class="arch-chip">Siemens SIMATIC S7</span>
         <span class="arch-chip">Mitsubishi MELSEC</span>
         <span class="arch-chip">Inovance AC800</span>
-        <span class="arch-chip">Delta PLC</span>
+        <span class="arch-chip">Haiwell A8 IoT PLC</span>
+        <span class="arch-chip">Advantech AMAX</span>
       </div>
     </div>
   </div>
@@ -982,22 +987,22 @@ section:empty {
     <div class="schedule-card">
       <div class="schedule-day" style="color:var(--accent);">Day 1 · 3/31 화</div>
       <h4>🦾 로봇팔/협동로봇 + 그리퍼 + 구현지능</h4>
-      <p>FANUC, Flexiv, Dobot, Realman 부스 방문. 구현지능 전용 구역에서 Inspire Robots 영민손 탐색. RoChU, DH-Robotics 소프트 그리퍼 시연 확인.</p>
+      <p>Flexiv, FANUC, Dobot, Realman, FAIRINO, Siasun 부스. 구현지능 구역에서 Inspire Robots 영민손, PaXini 촉각센서 탐색. SRT 소프트 그리퍼, DH-Robotics 적응형 그리퍼 시연 확인.</p>
     </div>
     <div class="schedule-card">
       <div class="schedule-day" style="color:var(--blue);">Day 2 · 4/1 수</div>
       <h4>👁️ 비전·AI 선별 + AMR/AGV</h4>
-      <p>Cognex, Keyence, Hikrobot, LMI Technologies 비전 비교. SmartMore AI 대형모델 상담. SEER, Geek+ AMR 시연 확인.</p>
+      <p>Keyence, Cognex, LMI Technologies (1-A58), SmartMore 비전 비교. Hexagon (5-H01) AI 검사. SEER, Hikrobot, Quicktron AMR 시연. OPT Machine Vision (10-G71) 비전 조명.</p>
     </div>
     <div class="schedule-card">
       <div class="schedule-day" style="color:var(--purple);">Day 3 · 4/2 목</div>
       <h4>⚙️ AI PLC·IoT + 물류 자동화 + 포럼</h4>
-      <p>Siemens, Mitsubishi, Inovance, Advantech 부스. KUKA 팔레타이징. 80+ 포럼 중 AI/디지털 트윈 세션 참석.</p>
+      <p>Siemens, Mitsubishi, Inovance, Leisai (3-M01), ZMotion (9-F04) 부스. KUKA 팔레타이징, Geek+ SkyCube 콜드체인. 80+ 포럼 중 AI/디지털 트윈 세션 참석.</p>
     </div>
     <div class="schedule-card">
       <div class="schedule-day" style="color:var(--orange);">Day 4 · 4/3 금</div>
       <h4>🌱 스마트팜 기술 + 종합 미팅</h4>
-      <p>Festo 바이오닉, Basler 하이퍼스펙트럴 상담. 핵심 업체 후속 미팅 확정, 샘플·견적 요청, 파트너십 논의.</p>
+      <p>Festo 바이오닉 농업, Basler 하이퍼스펙트럴, Hypersen 힘/토크 센서 상담. 핵심 업체 후속 미팅 확정, 샘플·견적 요청, 파트너십 논의.</p>
     </div>
   </div>
 </section>
@@ -1009,136 +1014,154 @@ section:empty {
 
 <!-- Footer -->
 <div class="footer">
-  <p>ITES 2026 스마트팜 참가업체 조사보고서 · AI 에이전트 병렬 조사 · 2026.03.09 작성</p>
-  <p style="margin-top:0.5rem;">공식 사이트: <a href="https://global.iteschina.com" target="_blank">global.iteschina.com</a> · 참관 등록 진행 중 (무료)</p>
+  <p>ITES 2026 스마트팜 참가업체 조사보고서 · AI 에이전트 8개 병렬 조사 · 2026.03.09 작성</p>
+  <p style="margin-top:0.5rem;">공식 사이트: <a href="https://global.iteschina.com" target="_blank" rel="noopener">global.iteschina.com</a> · 참관 등록 진행 중 (무료)</p>
 </div>
 
 <script>
-// Data
+// Data — 마크다운 보고서 전체 데이터 반영
 const categories = [
   {
     id:'gripper', icon:'🤏', title:'로봇 그리퍼', sub:'Robot Grippers', color:'var(--gripper)',
-    desc:'소프트 그리퍼, 진공 그리퍼, 적응형 그리퍼 — 작물 손상 없는 수확 및 핸들링',
+    desc:'소프트 그리퍼, 진공 그리퍼, 적응형 그리퍼, 영민손(灵巧手) — 작물 손상 없는 수확 및 핸들링',
     companies:[
-      {name:'Schmalz (시마츠)',prod:'FXCB/FMCB 진공 그리퍼 (ISO TS 15066, 8kg, IO-Link)',apply:'과일/채소 박스 진공 흡착 이송, 포장 Pick & Place'},
-      {name:'Inspire Robots (因时)',prod:'FTP 5지 영민손(灵巧手), 마이크로 서보, 촉각 피드백',apply:'딸기/토마토 섬세 파지, 인형 로봇 수확 핸드'},
-      {name:'DH-Robotics (大寰)',prod:'AG 적응형 전동 그리퍼 (145mm 스트로크), PGE 박형 (0.8~400N)',apply:'과실 크기별 자동 적응 파지, 정밀 힘 제어 손상 방지'},
-      {name:'RoChU (柔触)',prod:'소프트 그리퍼 (FDA/EC-1935 식품 인증), 2/4/6핑거, 65~155mm',apply:'연약 과실 무손상 수확, 식품 등급 직접 접촉'},
-      {name:'OnRobot (온로봇)',prod:'Soft Gripper (실리콘 컵, FDA 21 CFR, 2.2kg), VG10 진공',apply:'과일/채소 무손상 Pick & Place, 외부 에어 불필요'},
-      {name:'ZG Robot (增广)',prod:'전동 평행 그리퍼, 적응형 3핑거 그리퍼',apply:'다양한 크기 농산물 적응형 파지, 협동로봇 탑재'}
+      {name:'Inspire Robots (因时机器人)',prod:'FTP 5지 영민손 (6DoF, 790g, 촉각센서 12모듈, 핑거팁 3kg), RH56 상용 영민손',apply:'촉각 피드백 기반 딸기/토마토 섬세 파지, 인형 로봇 수확 핸드'},
+      {name:'Schmalz (施迈茨)',prod:'Food Gripper SFG (FDA 실리콘 흡착컵), 모듈형 진공 시스템, FANUC CRX 호환',apply:'식품등급 진공 그리퍼 농산물 분류/포장/팔레타이징'},
+      {name:'SRT (北京软体机器人)',prod:'불가사리형 소프트 그리퍼 (공압, 형상 적응), ISC 내부지지, 반데르발스 흡착',apply:'과실 무손상 수확(딸기/토마토), 26개국 500+ 고객, 농업 명시 타겟'},
+      {name:'DH-Robotics (大寰机器人)',prod:'DH-3 3핑거 적응형 (엔벨로프 파지, 낙하감지), AG-95L 전동 (100mm+ 스트로크)',apply:'비정형 과실 엔벨로프 파지, 힘 조절로 연약 농산물 손상 방지'},
+      {name:'PaXini (帕西尼)',prod:'GMH18/DexH13 영민손, 6D 홀 어레이 촉각센서 (3세대), ITPU 촉각 칩',apply:'촉각센서로 과실 숙도/경도 감지, 적정 파지력 자동 조절'},
+      {name:'ZengGuang (增广智能)',prod:'RM-EGB 전동 그리퍼 (4단계 힘 조절, 10~40N), SoftForce ±0.01N 정밀 힘제어',apply:'±0.01N 초정밀 힘 제어로 연약 농산물 무손상 핸들링'},
+      {name:'RoChU (柔触机器人)',prod:'B-시리즈 소프트 그리퍼 (실리콘, 공압), FDA/EC-1935 식품인증, 모듈형 2/4/6핑거',apply:'FDA 식품인증 소프트 그리퍼 연약 과실 무손상 수확, ±5mm 위치 허용'},
+      {name:'Neurocean (忆海原识)',prod:'25DoF 산업용 영민손 (인간 손동작 완전 재현), 텐던 구동, 뇌영감 제어',apply:'25DoF 복잡 조작(포도/체리토마토 선택적 수확, 줄기 절단)'},
+      {name:'Linghang (领航机器人)',prod:'로봇 자동 툴체인저/퀵체인지 시스템, 공압 툴체인저',apply:'단일 로봇에 다종 그리퍼 자동 교환(소프트→진공→절단도구)'}
     ],
-    tip:'RoChU/OnRobot은 FDA 식품 인증 소프트 그리퍼 보유. Inspire 5지 영민손은 비정형 과실 수확 차세대 기술. DH-Robotics AG는 145mm 스트로크로 다양한 크기 대응.'
+    tip:'SRT 불가사리형 소프트 그리퍼는 농업 적용 명시 타겟, 과실 무손상 수확 실증. PaXini 6D 촉각센서로 과실 숙도/경도 감지 → 선택적 수확 판단. RoChU FDA/EC 식품 안전 인증 보유.'
   },
   {
     id:'cobot', icon:'🦾', title:'로봇팔/협동로봇', sub:'Robot Arms & Cobots', color:'var(--cobot)',
     desc:'수확, 방제, 전정 등 농작업에 적합한 협동로봇 팔',
     companies:[
-      {name:'FANUC (화낙)',prod:'CRX 시리즈 (6축 힘 제어, 5~25kg), LR Mate 200iD',apply:'CRX 힘 제어 과실 수확, LR Mate 소형 온실 방제'},
-      {name:'Flexiv (非夕)',prod:'Rizon 4/4s/10 적응형 7축 (0.03N 힘 감지, IP65)',apply:'적응형 비정형 수확, 온실 습윤 환경 대응, 방제 노즐 조향'},
-      {name:'Dobot (越疆)',prod:'CR 시리즈 (3~16kg, ±0.02mm), CRS 안전 스킨 (15cm 감지)',apply:'수확/방제, 안전 스킨 작업자 근접 협동'},
-      {name:'Realman (睿尔曼)',prod:'RM75-B (7축, 5kg, 7.8kg 자중), ROS2, 24V DC',apply:'초경량 AMR 탑재 이동형 수확, 7축 장애물 회피'},
-      {name:'Kawasaki (가와사키)',prod:'duAro 듀얼암, RS 시리즈 소형 로봇',apply:'양손 수확 (파지+절단 동시), 소형 로봇 방제'},
-      {name:'HSR (华数)',prod:'HSR-CR605 협동로봇, JR 시리즈, MD 팔레타이징',apply:'소형 로봇 농작업, MD410 수확물 팔레타이징'},
-      {name:'EPSON (엡손)',prod:'T 시리즈 SCARA, 6축 C 시리즈, 비전 가이드',apply:'SCARA 고속 분류/포장, 6축 소형 온실 작업'}
+      {name:'Flexiv (非夕科技)',prod:'Rizon 4s/10 적응형 7축 (0.03N 힘 감지, IP65), 하이브리드 모션/힘 제어',apply:'7축+적응형 힘 제어 비정형 수확, IP65 온실 습윤 환경 대응'},
+      {name:'FANUC (화낙)',prod:'CRX-5iA~CRX-30iA (6DoF, 5~30kg, 8년 무보수), 식품등급 변형 모델',apply:'CRX-10iA/L (1418mm 도달) 과수 수확, 식품등급 모델 적용'},
+      {name:'Dobot (越疆科技)',prod:'CR3~CR16 (3~16kg, ±0.02mm), SafeSkin 안전 스킨 (15cm 비접촉 감지, 10ms)',apply:'SafeSkin으로 작업자 근접 안전 협동, CR10 수확/방제'},
+      {name:'Realman (睿尔曼)',prod:'RM75-B (7축, 5kg, 자중 7.2kg, 1:1.44 하중비), RM75-6F (내장 6축 힘센서)',apply:'초경량 7.2kg AMR 탑재 이동형 수확, 7축 장애물 회피'},
+      {name:'JAKA (节卡机器人)',prod:'Zu 3~18 (3~18kg, ±0.02mm), JAKA S3 모바일 협동로봇, 다로봇 협조 운전',apply:'Zu 12 (1327mm 도달) 과수 수확, S3 이동형 자율 농작업'},
+      {name:'Elite Robots (艾利特)',prod:'EC63~EC616 (3~16kg), EC64-19 (4kg, 1900mm 초장거리 도달, 4m/s)',apply:'EC64-19 (1900mm) 키 큰 작물/과수 수확, EC612 일반 농작업'},
+      {name:'FAIRINO (法奥机器人)',prod:'FR3~FR20 (3~20kg), FR20 (1854mm 도달, IP66), 듀얼 엔코더, 플러그앤플레이',apply:'FR20 (IP66, 1854mm) 실외/습윤 농업 환경 최적, 최고 방수등급'},
+      {name:'Siasun/DUCO (新松机器人)',prod:'GCR3~GCR30 (3~30kg), GCR25-1800 (25kg, 1800mm), IEC61508, IP65',apply:'GCR25-1800 (25kg, 1800mm) 대형 과수 수확/광범위 살포, IP65'},
+      {name:'Kawasaki (가와사키)',prod:'duAro1/2 듀얼암 SCARA 협동로봇 (2~3kg/팔, 760mm), 충돌감지 즉시정지',apply:'양손 수확(파지+절단 동시), 소형 작물(베리류) 양팔 작업'}
     ],
-    tip:'Flexiv Rizon: 7축+적응형 힘 제어+IP65 → 온실 수확 최적. Realman RM75-B: 7.8kg 초경량 → AMR 탑재 이상적. Dobot CRS 안전 스킨(15cm 비접촉) → 안전 협동.'
+    tip:'FAIRINO FR20: IP66 최고 방수등급 + 1854mm 도달 → 실외/습윤 농업 최적. Flexiv Rizon: 7축+적응형 힘 제어+IP65 → 정밀 수확 최적. Realman RM75-B: 자중 7.2kg 초경량 → AMR 탑재 이동형 수확.'
   },
   {
     id:'amr', icon:'🚗', title:'AMR/AGF/AGV', sub:'Autonomous Mobile Robots', color:'var(--amr)',
-    desc:'온실 내 자율이동 운반 로봇, 물류 자동화',
+    desc:'온실 내 자율이동 운반 로봇, 무인 지게차, 물류 자동화',
     companies:[
-      {name:'Hikrobot (海康)',prod:'잠입형 AMR Q7 (1,500kg, 1.5m/s), 포크리프트 AMR, iWMS-1000',apply:'SLAM 온실 운반, iWMS 수확량 관리, 포크 팔레트 이송'},
-      {name:'Geek+ (极智嘉)',prod:'P500 AMR (600kg, 2m/s), RoboShuttle, S 분류 로봇',apply:'수확물 자동 운반, G2P 피킹, 포장 라인 공급'},
-      {name:'SEER Robotics (仙工)',prod:'SRC 범용 AMR 제어기 (SLAM), SJV 전방향 AMR',apply:'SRC로 자체 농업용 AMR 개발, 옴니 이동 좁은 통로 주행'},
-      {name:'KUKA (쿠카)',prod:'KMP 모바일 플랫폼, KMR iiwa (이동+협동로봇)',apply:'KMR iiwa 이동+수확 복합 작업'},
-      {name:'Standard Robots (斯坦德)',prod:'Oasis AMR, Fleet 관리 시스템',apply:'다대 AMR 플릿, 온실 구역별 자율 배차'},
-      {name:'OKAGV (欧铠)',prod:'잠입형 AGV, 전방향 AGV, 자체 제어 시스템',apply:'온실 내 경로 자재 운반, 양액 공급 이동'}
+      {name:'SEER Robotics (仙工智能)',prod:'SRC 범용 AMR 제어기 (글로벌 출하 1위), AMB-300 SLAM, SSR-1400 리치트럭',apply:'SRC로 농업용 맞춤 AMR 자체 개발, 옴니 이동 좁은 온실'},
+      {name:'Hikrobot (海康机器人)',prod:'LMR 잠입형 (1,500kg), FMR 포크리프트, CMR 컨베이어, iWMS-1000, RCS 2000',apply:'SLAM 자율주행 온실 운반, iWMS 수확량 관리, CMR 라인사이드 물류'},
+      {name:'Geek+ (极智嘉)',prod:'MP1000R (1,000kg, 1.5m/s), RS8 피킹, M-시리즈 선반리프팅, AI 400picks/h',apply:'M-시리즈 육묘 트레이 선반 운반, AI 피킹 최적화'},
+      {name:'Quicktron (快仓智能)',prod:'M60 (600kg, 2m/s), M100 (1,000kg), M150 (1,500kg), 자율 SLAM',apply:'M60 컴팩트+고속(2m/s) 온실 통로 운행, 선반 리프팅 이동식 재배대'},
+      {name:'Standard Robots (斯坦德)',prod:'Oasis 300C/600C 자연내비게이션, 터거로봇, SROS 자체 OS, 2,000대 동시 관제',apply:'터거로봇 온실 트롤리 운반, 자연내비게이션 인프라 무설치'},
+      {name:'KUKA (쿠카)',prod:'KMP 600P (600kg, 2m/s 옴니, 60mm 리프팅), KMP 3000P (3톤), 유도충전 24/7',apply:'KMP 600P 옴니디렉셔널 온실 중량물 운반, 무인 충전 24시간 운영'},
+      {name:'HAI Robotics (海柔创新)',prod:'HaiPick A42 ACR (6m 케이스 핸들링), A42T (12m, 세계 최초), A3 포크리프팅',apply:'수직 랙 육묘 트레이/박스 자동 입출고, 12m 다단 온실 랙 대응'},
+      {name:'OKAGV (欧凯机器人)',prod:'Shark 1000 SLAM AMR, 잠입형/전방향/터거/포크 AGV (500kg~3톤+), OEM/ODM',apply:'OEM/ODM 맞춤형 온실 전용 AGV/AMR 개발, 저비용 SLAM'},
+      {name:'VisionNav (未来机器人)',prod:'자율 포크리프트 9개 시리즈, 3D 레이저+비전 내비게이션, 30+ 국가 배치',apply:'중량 팔레트 자동 이송, 냉장 저장고 입출고 자동화'}
     ],
-    tip:'SEER Robotics: ITES 3년+ 연속 참가, SRC 범용 제어기로 농업용 맞춤 AMR 개발 가능. 온실 GPS 불가 → SLAM 자율주행 필수.'
+    tip:'SEER Robotics: ITES 5년 연속 참가, SRC 범용 제어기로 농업용 맞춤 AMR 개발 가능. Quicktron M60: 2m/s 고속 + 컴팩트 → 온실 좁은 통로 고속 운반. HAI Robotics ACR: 12m 높이 케이스 핸들링.'
   },
   {
     id:'ailogistics', icon:'📦', title:'AI 물류 자동화', sub:'AI Logistics Automation', color:'var(--ailogistics)',
     desc:'AI 기반 물류, 팔레타이징, 콜드체인 자동화, WMS',
     companies:[
-      {name:'KUKA (쿠카)',prod:'KR QUANTEC 팔레타이징 (120~300kg), KUKA.AppTech',apply:'수확물 자동 팔레타이징, 냉장 물류 자동화'},
-      {name:'Geek+ (极智嘉)',prod:'P 시리즈 피킹 AMR, RoboShuttle, AI 스케줄링',apply:'G2P 주문별 자동 출하, AI 최적 경로'},
-      {name:'Siemens (지멘스)',prod:'SIMATIC WMS, MES, MindSphere IoT',apply:'저온 저장고 WMS, 수확~출하 MES 트래킹, 콜드체인'},
-      {name:'Hikrobot (海康)',prod:'iWMS-1000, RCS-2000, 포크리프트 AMR',apply:'재고/위치 실시간 관리, ERP/MES 연동'},
-      {name:'SMC (에스엠씨)',prod:'공압 실린더, 진공 패드, 전동 액추에이터',apply:'포장 라인 공압 구동, 박스 이송, 라벨 부착'},
-      {name:'Festo (페스토)',prod:'바이오닉 소프트 그리퍼, VTEM 모션 터미널',apply:'다양한 형태 농산물 포장, 유연 포장 시스템'},
-      {name:'HSR (华数)',prod:'HSR-MD410 팔레타이징 (10kg, ±0.08mm)',apply:'가성비 팔레타이징, 수확물 박스 적재'}
+      {name:'KUKA (쿠카)',prod:'KR QUANTEC PA (40~1,300kg), Arctic (-30°C~+10°C 전용, 보호복 불필요), PalletTech',apply:'Arctic으로 냉장 창고 -25°C 팔레타이징, 콜드체인 무중단'},
+      {name:'Siemens (지멘스)',prod:'INTRALOG WMS (분산 아키텍처, 24/7), Opcenter 물류, TIA 표준 라이브러리',apply:'농산물 WMS (입고~피킹~출하), ERP 연동 공급망 추적성'},
+      {name:'Hikrobot (海康机器人)',prod:'iWMS-1000, RCS 2000 다로봇 디스패치, AMR 플릿 (LMR/FMR/CMR)',apply:'Goods-to-Person 농산물 물류, iWMS 재고/주문 관리'},
+      {name:'Geek+ (极智嘉)',prod:'SkyCube 다온도 존 자동 팔레트 (-18°C~+5°C, 세계 최초), 4방향 셔틀',apply:'SkyCube 냉동(-18°C)/냉장(0~5°C) 다온도 존, 저장 70%↑ 피킹 90%↑'},
+      {name:'Festo (페스토)',prod:'FPaKit 갠트리 팔레타이저 (50kg, 4~10박스/분), 중량급 갠트리 (200kg), 소프트 그리퍼',apply:'농산물 박스 팔레타이징, 소프트 그리퍼 연약 농산물 포장'},
+      {name:'HAI Robotics (海柔创新)',prod:'HaiPick ACR (10m 높이 ASRS, 세계 최초), MHI 혁신상, 저장밀도 80~130%↑',apply:'고밀도 AS/RS 농산물 보관, 케이스 레벨 피킹, 냉장 수직 저장'},
+      {name:'Libiao Robotics (立镖机器人)',prod:'"Mini Yellow" 분류 로봇, 3D 수직 T-sort, 60,000+ 로봇 배치, 99.99% 정확도',apply:'농산물 등급별 자동 분류, 시즌 피크 모듈형 배치, 냉장 호환'},
+      {name:'Mushiny (牧星智能)',prod:'3D Sorter (10,000개/h), 콜드체인 전용 AMR, iRMS 관리 SW, 20+ 국가',apply:'냉동/냉장 다온도 존 AMR 물류, 고처리량 분류, WMS 연동'},
+      {name:'Multiway (劢微机器人)',prod:'자율 포크리프트 AGV (1~5톤, 10m 적재), SkyEye 비전+레이저, WMS/WCS/RCS',apply:'중량 팔레트 고적재(10m), 냉장 창고 자동 포크리프트'}
     ],
-    tip:'Siemens WMS + KUKA 팔레타이징 + Geek+ AMR → 수확-포장-출하 전 과정 자동화. 콜드체인 자동화가 핵심.'
+    tip:'KUKA Arctic: 세계 유일 -30°C 전용 팔레타이징 → 농산물 콜드체인 핵심. Geek+ SkyCube: -18°C~+5°C 다온도 존. Siemens INTRALOG WMS + KUKA + Geek+ AMR → 수확~출하 전 과정 자동화.'
   },
   {
     id:'aisorting', icon:'🎯', title:'AI 선별 자동화', sub:'AI Sorting Automation', color:'var(--aisorting)',
     desc:'AI 기반 농산물 선별, 등급 판정, 품질 검사',
     companies:[
-      {name:'Cognex (코그넥스)',prod:'In-Sight D900 (ViDi AI 딥러닝), VisionPro Deep Learning',apply:'과실 외관 등급 분류 (크기/색상/흠집), 소량 학습 고정확도'},
-      {name:'Keyence (키엔스)',prod:'CV-X AI 비전, IV3 AI 센서, FD 센서, LJ-X 프로파일러',apply:'실시간 분류, 중량/크기 계측, AI 외관 검사'},
-      {name:'SmartMore (思谋)',prod:'SMore ViMo AI 플랫폼, 멀티모달 대형모델, AI-AOI',apply:'대형모델 비정형 결함 검출, 자동 선별 라인 통합'},
-      {name:'EPSON (엡손)',prod:'T 시리즈 SCARA + 비전 가이드, IntelliFlex',apply:'SCARA 고속 Pick & Place 분류, 등급별 레인 배분'},
-      {name:'GSK CNC (广州数控)',prod:'RB 산업 로봇, 델타 로봇, GSK-RC 제어',apply:'델타 로봇 고속 과실 Pick & Place 선별'},
-      {name:'Hexagon (해사곤)',prod:'3D 스캐너, 慧质云 품질 클라우드',apply:'3D 형상 정밀 등급 분류, 품질 클라우드 관리'},
-      {name:'CKVision (创科)',prod:'CKVisionBuilder 노코드 머신비전',apply:'프로그래밍 없이 검사 시스템 구축, 빠른 품종 변경'}
+      {name:'SmartMore (思谋科技)',prod:'SMore ViMo AI 플랫폼 (제로코드 비전검사), IndustryGPT 산업 대형모델, AI-AOI',apply:'제로코드 농산물 분류/결함 검출, 근경류 뿌리·줄기 품질 등급'},
+      {name:'Hexagon (해사곤)',prod:'HxGN Visual Detection (ML 표면결함), 3D 스캐너, 慧质云 품질 클라우드',apply:'ML 농산물 표면 품질 평가, 3D 크기 측정 등급 분류'},
+      {name:'Cognex (코그넥스)',prod:'In-Sight D900 (ViDi AI 내장), VisionPro Deep Learning, ViDi Green(분류)/Red(이상)',apply:'ViDi Green 색상/형상/질감별 분류, 소량 학습 고정확도'},
+      {name:'Keyence (키엔스)',prod:'VS 시리즈 AI 비전, IV3 AI 센서, CV-X/XG-X 비전시스템, AI 자동 학습',apply:'컨베이어 실시간 분류, 중량/크기 계측, AI 외관 검사'},
+      {name:'Mech-Mind (梅卡曼德)',prod:'Mech-Eye 3D 카메라 (Nano/Pro Enhanced), Mech-GPT 로봇 대형모델, 15,000+ 배치',apply:'3D 비전 가이드 농산물 빈피킹/분류, Mech-GPT 자율 판단'},
+      {name:'CKVision (创科视觉)',prod:'CKVisionSDK (400+ 비전 알고리즘), CKVisionBuilder 4.0 (드래그앤드롭 노코드)',apply:'노코드 농산물 검사 시스템 구축, 색상/윤곽/형상 매칭 분류'},
+      {name:'LMI Technologies',prod:'Gocator 3D 스마트 센서 (인라인 100% 검사), 2D 스마트 카메라 (2026 신제품)',apply:'감자/과실 3D 형상 기반 크기/체적/표면 등급 분류 실증'},
+      {name:'Hikrobot (海康机器人)',prod:'VM 알고리즘 플랫폼 (결함검출/분류/측정), 산업 카메라 풀라인업, AI Open Platform',apply:'카메라+VM 플랫폼 농산물 결함 검출/분류/측정 통합'},
+      {name:'DLCV.AI (深度视觉)',prod:'AI 원스톱 플랫폼 (100장→1분 학습, 10,000+장/초 추론), 어노테이션~배포 일체',apply:'소량 데이터 초고속 모델 구축, 농산물 품종별 검사 모델 빠른 적응'}
     ],
-    tip:'Cognex ViDi: 수십 장 학습으로 고정확도 → 다품종 소량에 유리. SmartMore: 300+ 기업 실적, 대형 모델 비정형 결함. CKVision 노코드 → 농업 현장 빠른 도입.'
+    tip:'SmartMore IndustryGPT: 산업 대형모델 비정형 결함 검출 → 전통 비전 한계 돌파. Cognex ViDi: 수십 장 학습으로 분류 → 다품종 소량 최적. DLCV.AI: 100장→1분 학습 → 품종 변경 즉시 대응.'
   },
   {
     id:'vision', icon:'👁️', title:'비전 선별 기술', sub:'Vision Sorting Technology', color:'var(--vision)',
-    desc:'머신비전 카메라, 하이퍼스펙트럴 이미징, 3D 스캐닝',
+    desc:'머신비전 카메라, 하이퍼스펙트럴 이미징, 3D 스캐닝, 비전 조명',
     companies:[
-      {name:'Keyence (키엔스)',prod:'CV-X AI (딥러닝), LJ-X8000 3D 프로파일러, IM 화상 측정',apply:'작물 3D 계측, AI 병해충 판별, 과실 크기/무게 추정'},
-      {name:'Hikrobot (海康)',prod:'MV 산업용 카메라, SC 스마트 카메라, 3D 비전, VisionMaster',apply:'해충 트랩 분석, 컬러 기반 생육 판별, 비전 가이드 수확'},
-      {name:'Basler (바슬러)',prod:'ace2/boost 카메라, 하이퍼스펙트럴, pylon SDK',apply:'다분광 조기 병해 감지, NDVI 분석, 잠복 병해 발견'},
-      {name:'LMI Technologies',prod:'Gocator 3D 센서 (라인 스캔/스냅샷), 인라인 100% 검사',apply:'과실 3D 전수검사 (체적/표면 결함), 등급 자동 판정'},
-      {name:'Cognex (코그넥스)',prod:'In-Sight 2800, 3D-A5000, DataMan, Edge Intelligence',apply:'3D 입체 검사, 포장 추적성, 분산 비전 관리'},
-      {name:'SmartMore (思谋)',prod:'SMore ViMo, 감지-결정-실행 폐루프, 멀티모달 대형모델',apply:'전통 비전 한계 극복 비정형 결함 검출'},
-      {name:'Daheng (大恒图像)',prod:'MER 산업용 카메라, 머신비전 솔루션',apply:'고해상도 엽면 촬영, 해충 자동 카운팅, 저비용 비전'}
+      {name:'Keyence (키엔스)',prod:'라인스캔 (67MP, 6.1μs/line, 165kHz), CV-X AI 비전, LJ-X8000 3D 프로파일러',apply:'고속 컨베이어 라인스캔 농산물 연속 외관 검사, 3D 형상 계측'},
+      {name:'LMI Technologies',prod:'Gocator 3D 레이저 프로파일러 (4K+ 해상도), 2D 스마트 카메라, GoPxL',apply:'과실 3D 체적/표면 결함 전수 검사, 인라인 등급 판정'},
+      {name:'OPT Machine Vision (奥普特)',prod:'머신비전 LED 조명 45시리즈 ~1,000모델+30,000 맞춤, 컨트롤러, 3D 센서',apply:'농산물 선별 라인 일관 조명, 특수 파장 LED 멍/결함 감지'},
+      {name:'SmartMore (思谋科技)',prod:'SMore VN4000 AI 스마트 카메라 (딥러닝칩, 60fps, 자동초점), VN2000 비전센서',apply:'AI 스마트 카메라 소량 학습 농산물 등급 분류, 컴팩트 선별장비 통합'},
+      {name:'Hikrobot (海康机器人)',prod:'에어리어/라인스캔 (29MP, 376fps), CL 라인스캔 (2048px, 51,000line/s), 3D 카메라',apply:'라인스캔 고속 농산물 연속 검사, 저비용 중국산 산업용 카메라'},
+      {name:'Cognex (코그넥스)',prod:'In-Sight 2800 AI, 3D-A5000 (3D 입체검사), DataMan, Edge Intelligence',apply:'3D-A5000 비정형 농산물 입체 검사, 포장 추적성 바코드'},
+      {name:'Basler (바슬러)',prod:'racer 라인스캔, ace2 에어리어 (GigE/USB3/CoaXPress), 하이퍼스펙트럴/멀티스펙트럴',apply:'다분광 조기 병해 감지 (NDVI 분석), 하이퍼스펙트럴 내부 품질'},
+      {name:'Daheng Imaging (大恒图像)',prod:'MERCURY2 산업 카메라, MARS (31MP), PALLAS 스마트 카메라, 프레임그래버',apply:'저비용 고해상도 카메라 농업 장비 OEM, 엽면 촬영 해충 카운팅'},
+      {name:'CCS Inc. (CCS照明)',prod:'LED 검사조명 2,400+ 모델 (글로벌 1위), 다파장 특수 조명, Agri-Bio LED',apply:'근적외/UV 조명 멍/질병 감지, Agri-Bio 전용 LED 농산물 검사'}
     ],
-    tip:'LMI Technologies: ITES 2026 참가 공식 확인 → 3D 전수검사 최적. Basler 하이퍼스펙트럴 → 육안 불가 초기 병해 감지. SmartMore 멀티모달 대형모델 → 비정형 결함.'
+    tip:'OPT Machine Vision (ITES 2026 확인): 글로벌 비전 조명 핵심 공급사, 30,000+ 맞춤. Basler 하이퍼스펙트럴: 육안/RGB 불가 조기 병해 감지. CCS Agri-Bio LED: 농산물 검사 전용 다파장 조명.'
   },
   {
     id:'aiplc', icon:'⚙️', title:'AI PLC 통합 플랫폼', sub:'AI PLC Integration Platform', color:'var(--aiplc)',
     desc:'AI 기능 내장 PLC, IoT 플랫폼, SCADA, MES — 온실 통합 제어',
     companies:[
-      {name:'Siemens (지멘스)',prod:'S7-1500 (AI 확장), S7-1200 (온실 예제 공식 제공), TIA Portal, MindSphere, WinCC',apply:'온실 환경 통합 제어, MindSphere 원격 모니터링/예측 분석'},
-      {name:'Mitsubishi (미쓰비시)',prod:'MELSEC iQ-R/iQ-F, GOT2000 HMI, CC-Link IE TSN, MELIPC 엣지',apply:'양액 제어, CC-Link 온실 네트워크 통합, 엣지 AI 분석'},
-      {name:'Inovance (汇川)',prod:'AC800 IPC (EtherCAT, 256축, 500us), 서보, 인버터, IoT',apply:'AC800 대규모 온실 통합, 인버터 환기/순환, 서보 양액 정밀'},
-      {name:'Delta (델타)',prod:'DVP/AS PLC, DOP HMI, 인버터, DIACloud IoT',apply:'냉난방, 순환팬/환기, 가성비 중소규모 솔루션'},
-      {name:'Advantech (어드밴텍)',prod:'WISE-PaaS IoT, UNO/TPC PC, ADAM 수집, WebAccess SCADA',apply:'Edge AI 실시간 제어, 센서 수집, 원격 관제'},
-      {name:'Leisai (雷赛)',prod:'DMC3000 모션 제어 (1~12축, 4MHz), EtherCAT 버스 컨트롤러',apply:'수확 로봇 다축 모션, EtherCAT 온실 장비 네트워크'},
-      {name:'ZMotion (正运动)',prod:'ZMC EtherCAT 제어기, ZMIO 확장, ZDevelop 개발환경',apply:'온실 다축 제어, 분산 IO 네트워크'}
+      {name:'Siemens (지멘스)',prod:'SIMATIC S7-1200/1500, IOT2050 엣지 (LoRaWAN), TIA Portal, MindSphere, WinCC',apply:'S7-1200 온실 환경제어 공식 예제 제공, IOT2050 LoRaWAN 센서 연동, CEA 전용'},
+      {name:'Mitsubishi Electric (미쓰비시)',prod:'MELSEC iQ-R/iQ-F, GOT2000 HMI, CC-Link IE TSN, MELIPC 엣지 컴퓨팅',apply:'iQ-F 관개/비배/기후 관리, CC-Link 온실 네트워크, MELIPC 엣지 AI'},
+      {name:'Inovance (汇川기술)',prod:'EASY 소형 PLC (EtherCAT), H5U 중형, AC800 고성능 (256축, 500μs), InoCare SCADA',apply:'EASY PLC 소형 온실 제어, 인버터 환기/순환, 서보 양액 정밀 투입'},
+      {name:'Delta Electronics (델타)',prod:'DVP/AS PLC (EtherCAT), DOP HMI, DIACloud IoT, DIALink 엣지, MS300 인버터',apply:'DVP PLC + DIACloud IoT 원격 모니터링, 인버터 에너지 관리'},
+      {name:'Advantech (어드밴텍)',prod:'AMAX IoT 제어 (PLC+HMI+IoT 통합), WISE-PaaS, WISE-6610 LoRaWAN GW, ADAM IO',apply:'스페인 온실 프로젝트 실증 — LoRaWAN 센서+WISE-PaaS 물 95% 절감'},
+      {name:'Leisai (雷赛智能)',prod:'PMC600 IoT PLC (EtherCAT, 32축, IoT 내장), SCnU 소형 PLC (8~32축)',apply:'PMC600 IoT PLC 네트워크 연결 온실, 모션 제어 파종기/컨베이어'},
+      {name:'ZMotion (正运动)',prod:'XPLC EtherCAT 모션 컨트롤러, ZMC408SCAN 비전 통합, Basic/C, ROS 연동',apply:'EtherCAT 다축 파종기/이식기/분류 컨베이어, ROS 로봇 통합'},
+      {name:'Haiwell (海为科技)',prod:'A8 Smart IoT PLC (PLC+4G/WiFi 게이트웨이 일체), Cloud HMI (MQTT), Cloud Camera',apply:'채소 온실 IoT 관리 시스템 실증 — MQTT 분산 PLC, 클라우드 원격 관제'},
+      {name:'Kinco (步科자동화)',prod:'MK 시리즈 HMI+PLC+IoT 올인원, GREEN HMI, SaaS 플랫폼, VNC 원격',apply:'MK 올인원 디바이스 온실 제어+표시+클라우드 1대 해결, SaaS 다농장 통합'}
     ],
-    tip:'Siemens: S7-1200 온실 제어 예제 공식 제공 → 레퍼런스 확보 용이. Inovance AC800: 256축+EtherCAT → 대규모 식물공장. Delta: 가성비 → 중소규모 최적.'
+    tip:'Haiwell A8 IoT PLC: 채소 온실 IoT 관리 시스템 실증 완료 → 스마트팜 직접 레퍼런스. Advantech WISE-PaaS: 스페인 온실 물 95% 절감 실증. Siemens S7-1200 온실 환경제어 공식 예제 제공.'
   },
   {
     id:'smartfarm', icon:'🌱', title:'스마트팜 관련 기술', sub:'Smart Farm Technologies', color:'var(--smartfarm)',
-    desc:'환경 제어, 양액 시스템, 병해충 모니터링, 드론 방제, 디지털 트윈',
+    desc:'환경 제어, 양액 시스템, 식물공장, 드론 방제, 디지털 트윈, 센서',
     companies:[
-      {name:'Siemens (지멘스)',prod:'디지털 트윈 (NX, Tecnomatix), MindSphere, S7-1200 온실 제어',apply:'온실 디지털 트윈 구축, 가상 시뮬레이션→최적 제어'},
-      {name:'Advantech (어드밴텍)',prod:'WISE-PaaS Edge AI, ADAM-6000, 환경 센서 게이트웨이',apply:'환경 센서(온/습/CO2/광/EC/pH) 수집, 엣지 AI, 원격 모니터링'},
-      {name:'DJI (大疆)',prod:'Agras T60 (60L, RTK, AI 처방도), T25P (25L 경량)',apply:'대형 시설 드론 방제, AI 변량 분사, 다분광 모니터링'},
-      {name:'XAG (极飞)',prod:'P150 드론, R150 자율주행 지상 로봇, AI 처방도',apply:'R150 온실 내 지상 방제, AI 변량 분사, 무인농장'},
-      {name:'Festo (페스토)',prod:'바이오닉 (BionicSoftArm), 비례 밸브, 공압/전동 하이브리드',apply:'소프트 액추에이터, 비례 밸브 양액 정밀 유량 제어'},
-      {name:'Basler (바슬러)',prod:'하이퍼스펙트럴 카메라, ace2, dart 임베디드',apply:'조기 병해충 감지 (NDVI/NDRE), 수분 스트레스 분석'},
-      {name:'Keli Sensing (柯力传感)',prod:'6축 힘/토크 센서, 마이크로 센서, 로드셀',apply:'수확 로봇 파지력 센싱, 양액 계량, 토양 수분 측정'}
+      {name:'Siemens (지멘스)',prod:'디지털 트윈 (NX, Xcelerator), digiCEAd 디지털 온실, MindSphere IoT',apply:'온실 디지털 트윈 구축, 80 Acres Farms 수직농장 파트너, 생육 시뮬레이션 최적 제어'},
+      {name:'Advantech (어드밴텍)',prod:'Edge AI (AIR-120/310, 26 TOPS), WISE-PaaS, IoT 게이트웨이, ADAM 센서',apply:'Edge AI 실시간 작물 이미지 분석, 병해충 감지, 센서 데이터 클라우드 분석'},
+      {name:'DJI (大疆创新)',prod:'Agras T100 (100L/150L/100kg, 20m/s, 2025 신제품), T70P, T25P, 다분광 드론',apply:'T100 대면적 드론 방제 (역대 최대), AI 변량 분사, 다분광 작물 모니터링'},
+      {name:'XAG (极飞科技)',prod:'P150Pro 농업 드론, R150 자율주행 지상 로봇, FM 농지 모니터링, GNSS RTK',apply:'R150 온실 내 지상 방제, AI 변량 분사, 466농장 실증, 38개국'},
+      {name:'Festo (페스토)',prod:'BionicSoftArm, 비례 밸브, 공/전 하이브리드, 플러그 식물 핸들링 (파지/분류/이식)',apply:'100년 농업 자동화 경험 — 묘목 파지/분류/이식, 비례 밸브 양액 정밀 유량'},
+      {name:'Basler (바슬러)',prod:'ace2 X visSWIR (단파적외선), 하이퍼스펙트럴, pylon SDK',apply:'SWIR 농산물 내부 품질 (사과/감자 당도/수분), NDVI 식생 분석'},
+      {name:'Hypersen (海伯森)',prod:'HPS-FT 6축 힘/토크 센서, 3D 광학 프로파일러, 3D 컨포컬 센서, 고속 산업 카메라',apply:'6축 힘/토크 센서 수확 로봇 파지력 센싱, 3D 비전 작물 높이/크기 측정'},
+      {name:'Sananbio (中科三安)',prod:'LED 식물 성장 조명 (80+ 레시피, 300+ 품종), UPLIFT 무인 수직농장, ARK 컨테이너팜',apply:'세계 최대 식물공장 (10,000m²) 운영, 자동 파종 130,000립/h, 이식 12,000주/h'},
+      {name:'Keli Sensing (柯力传感)',prod:'6축 힘/토크 센서, 로드셀, 마이크로 센서, 디지털 트랜스미터 (229 특허)',apply:'로봇 파지력 센싱, 양액 무게 계량, 수확량 측정, 토양 수분 텐션'}
     ],
-    tip:'Siemens 디지털 트윈 → 온실 가상 시뮬레이션 후 최적 제어. XAG R150 → 검증된 자율주행 지상 방제. Basler 하이퍼스펙트럴 → 조기 병해 감지 핵심.'
+    tip:'Siemens digiCEAd 디지털 온실 + 80 Acres Farms 수직농장 파트너 → CEA 전용 솔루션. Sananbio 세계 최대 식물공장 (10,000m²) 운영. XAG R150 자율주행 지상 로봇은 온실 내 지상 방제에 검증됨.'
   }
 ];
 
 const top10 = [
-  {rank:1, name:'Flexiv', flag:'🇨🇳', field:'로봇팔·그리퍼', reason:'7축 적응형 힘 제어 + IP65, 수확 로봇 최적'},
-  {rank:2, name:'Siemens', flag:'🇩🇪', field:'AI PLC·물류·스마트팜', reason:'S7-1200 온실 예제 공식 제공, MindSphere 디지털 트윈'},
-  {rank:3, name:'Hikrobot', flag:'🇨🇳', field:'AMR·비전·물류', reason:'비전+AMR 이원 포트폴리오, iWMS 통합 관리'},
-  {rank:4, name:'Cognex', flag:'🇺🇸', field:'AI선별·비전', reason:'ViDi AI 소량 학습 고정확도, 풍부한 산업 실적'},
-  {rank:5, name:'FANUC', flag:'🇯🇵', field:'로봇팔', reason:'CRX 6축 힘 제어, ITES 직접 참가'},
-  {rank:6, name:'Realman', flag:'🇨🇳', field:'로봇팔', reason:'7.8kg 초경량 7축, AMR 탑재 이동형 수확 최적'},
-  {rank:7, name:'SEER', flag:'🇨🇳', field:'AMR', reason:'3년+ ITES 연속, SRC 범용 제어기 맞춤 AMR'},
-  {rank:8, name:'SmartMore', flag:'🇨🇳', field:'AI선별·비전', reason:'멀티모달 대형모델, 비정형 결함 검출'},
-  {rank:9, name:'RoChU', flag:'🇨🇳', field:'로봇 그리퍼', reason:'FDA/EC 식품 인증 소프트 그리퍼'},
-  {rank:10, name:'Inovance', flag:'🇨🇳', field:'AI PLC', reason:'256축 EtherCAT, 중국 산업자동화 1위'}
+  {rank:1, name:'Flexiv', flag:'🇨🇳', field:'로봇팔·적응형', reason:'7축 적응형 힘 제어 + IP65, ITES 연속 참가, 수확 로봇 최적'},
+  {rank:2, name:'Siemens', flag:'🇩🇪', field:'AI PLC·물류·스마트팜', reason:'S7-1200 온실 예제 공식 제공, digiCEAd CEA 전용, MindSphere 디지털 트윈'},
+  {rank:3, name:'Hikrobot', flag:'🇨🇳', field:'AMR·비전·물류·AI선별', reason:'비전+AMR 4개 분야 동시 커버, iWMS 통합 관리, ITES 연속 참가'},
+  {rank:4, name:'Cognex', flag:'🇺🇸', field:'AI선별·비전', reason:'ViDi AI 딥러닝 소량 학습 고정확도, 식품산업 풍부한 실적'},
+  {rank:5, name:'FAIRINO', flag:'🇨🇳', field:'로봇팔', reason:'IP66 최고 방수등급 + 1854mm 도달 → 실외/습윤 농업 최적'},
+  {rank:6, name:'SEER Robotics', flag:'🇨🇳', field:'AMR', reason:'5년+ ITES 연속 참가, SRC 범용 제어기로 맞춤 AMR 개발'},
+  {rank:7, name:'SmartMore', flag:'🇨🇳', field:'AI선별·비전', reason:'IndustryGPT 산업 대형모델, ViMo 제로코드, ITES 연속 참가'},
+  {rank:8, name:'SRT', flag:'🇨🇳', field:'로봇 그리퍼', reason:'불가사리형 소프트 그리퍼 농업 명시 타겟, 과실 무손상 수확 실증'},
+  {rank:9, name:'Geek+', flag:'🇨🇳', field:'AMR·AI물류', reason:'SkyCube -18°C~+5°C 다온도 존, 글로벌 AMR 1위 (7년 연속)'},
+  {rank:10, name:'Advantech', flag:'🇹🇼', field:'AI PLC·스마트팜', reason:'스페인 온실 프로젝트 실증, LoRaWAN+WISE-PaaS Edge AI'}
 ];
 
 // Render categories

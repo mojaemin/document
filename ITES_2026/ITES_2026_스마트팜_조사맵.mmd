@@ -5,45 +5,45 @@ title: ITES 2026 스마트팜 자동화 플랫폼 — 참가업체 조사 맵
 graph TB
     subgraph HEADER["🏭 ITES 2026 선전 국제 산업제조 기술 및 장비 전시회"]
         direction LR
-        INFO["📅 2026.3.31~4.3 | 📍 심천 국제컨벤션센터(보안)\n🏢 1,658 참가업체 | 🤖 구현지능 전용구역 신설"]
+        INFO["📅 2026.3.31~4.3 | 📍 심천 국제컨벤션센터(보안)\n🏢 1,658 참가업체·16만m² | 🤖 구현지능 전용구역 신설"]
     end
 
     subgraph PLATFORM["🧠 AI Platform — 통합 운영 플랫폼"]
-        P1["Siemens\nMindSphere + SCADA"]
+        P1["Siemens\nMindSphere + digiCEAd"]
         P2["Advantech\nWISE-PaaS IoT"]
-        P3["SmartMore\nViMo AI 플랫폼"]
+        P3["SmartMore\nViMo + IndustryGPT"]
     end
 
     subgraph EXECUTION["⚙️ Execution — 실행 계층"]
         direction LR
-        E1["FANUC CRX\n협동로봇"]
-        E2["Flexiv Rizon\n적응형 7축"]
-        E3["Realman RM75\n초경량 7축"]
-        E4["KUKA KMR iiwa\n이동+협동로봇"]
+        E1["Flexiv Rizon\n적응형 7축 IP65"]
+        E2["FANUC CRX\n협동로봇 8년 무보수"]
+        E3["FAIRINO FR20\nIP66 1854mm"]
+        E4["Realman RM75\n초경량 7.2kg"]
     end
 
     subgraph PERCEPTION["👁️ Perception — 인지 계층"]
         direction LR
         V1["Cognex\nViDi AI 딥러닝"]
-        V2["Hikrobot\nMV + 3D 비전"]
+        V2["Keyence\nCV-X AI 비전"]
         V3["Basler\n하이퍼스펙트럴"]
         V4["LMI Technologies\nGocator 3D"]
     end
 
     subgraph MOBILITY["🚗 Mobility — 이동 계층"]
         direction LR
-        MB1["Hikrobot\nAMR Q7"]
-        MB2["Geek+\nP500 AMR"]
-        MB3["SEER Robotics\nSRC 제어기"]
-        MB4["KUKA\nKMP 플랫폼"]
+        MB1["SEER Robotics\nSRC 제어기 (출하 1위)"]
+        MB2["Hikrobot\nAMR + iWMS"]
+        MB3["Quicktron M60\n2m/s 고속"]
+        MB4["Geek+\nSkyCube 콜드체인"]
     end
 
     subgraph EDGE["📡 Edge Control — 현장 제어"]
         direction LR
-        C1["Siemens\nSIMATIC S7"]
-        C2["Mitsubishi\nMELSEC iQ"]
+        C1["Siemens\nSIMATIC S7 + IOT2050"]
+        C2["Mitsubishi\nMELSEC iQ + MELIPC"]
         C3["Inovance\nAC800 (256축)"]
-        C4["Delta\nPLC + 인버터"]
+        C4["Haiwell\nA8 IoT PLC"]
     end
 
     HEADER --> PLATFORM
@@ -56,75 +56,99 @@ graph TB
         direction LR
 
         subgraph GRIPPER["🤏 로봇 그리퍼"]
-            G1["Schmalz 진공"]
-            G2["Inspire 영민손"]
-            G3["DH-Robotics AG"]
-            G4["RoChU 소프트"]
-            G5["OnRobot Soft"]
-            G6["ZG Robot 적응형"]
+            G1["Inspire Robots\n5지 영민손 촉각"]
+            G2["Schmalz\nFDA 진공 그리퍼"]
+            G3["SRT\n불가사리형 소프트"]
+            G4["DH-Robotics\nDH-3 적응형"]
+            G5["PaXini\n6D 촉각센서"]
+            G6["ZengGuang\n±0.01N 힘제어"]
+            G7["RoChU\nFDA 소프트"]
+            G8["Neurocean\n25DoF 영민손"]
+            G9["Linghang\n자동 툴체인저"]
         end
 
         subgraph COBOT["🦾 로봇팔/협동로봇"]
-            CB1["FANUC CRX"]
-            CB2["Flexiv Rizon"]
-            CB3["Dobot CR"]
-            CB4["Realman RM75"]
-            CB5["Kawasaki duAro"]
-            CB6["HSR CR605"]
+            CB1["Flexiv Rizon\n7축 적응형 IP65"]
+            CB2["FANUC CRX\n5~30kg 8년 무보수"]
+            CB3["Dobot CR\nSafeSkin 안전"]
+            CB4["Realman RM75\n7축 7.2kg"]
+            CB5["JAKA Zu\n모바일 협동"]
+            CB6["Elite EC64-19\n1900mm 도달"]
+            CB7["FAIRINO FR20\nIP66 1854mm"]
+            CB8["Siasun GCR25\n25kg 1800mm"]
+            CB9["Kawasaki duAro\n듀얼암 SCARA"]
         end
 
-        subgraph AMR["🚗 AMR/AGF/AGV"]
-            A1["Hikrobot Q7"]
-            A2["Geek+ P500"]
-            A3["SEER SRC"]
-            A4["KUKA KMR"]
-            A5["Standard Robots"]
-            A6["OKAGV"]
+        subgraph AMRSEC["🚗 AMR/AGF/AGV"]
+            A1["SEER SRC\n범용 AMR 제어기"]
+            A2["Hikrobot\nLMR/FMR/CMR"]
+            A3["Geek+ MP1000R\n글로벌 AMR 1위"]
+            A4["Quicktron M60\n2m/s 고속"]
+            A5["Standard Robots\n자연내비게이션"]
+            A6["KUKA KMP\n옴니 600kg"]
+            A7["HAI Robotics\nACR 12m"]
+            A8["OKAGV\nOEM/ODM 맞춤"]
+            A9["VisionNav\n자율 포크리프트"]
         end
 
         subgraph AILOG["📦 AI 물류 자동화"]
-            AL1["KUKA 팔레타이징"]
-            AL2["Geek+ RoboShuttle"]
-            AL3["Siemens WMS"]
-            AL4["Hikrobot iWMS"]
-            AL5["SMC 공압"]
-            AL6["Festo 바이오닉"]
+            AL1["KUKA Arctic\n-30°C 팔레타이징"]
+            AL2["Siemens\nINTRALOG WMS"]
+            AL3["Hikrobot\niWMS + RCS"]
+            AL4["Geek+ SkyCube\n-18°C~+5°C"]
+            AL5["Festo\nFPaKit 갠트리"]
+            AL6["HAI Robotics\nACR ASRS"]
+            AL7["Libiao\n분류 로봇 6만+"]
+            AL8["Mushiny\n콜드체인 AMR"]
+            AL9["Multiway\n자율 포크 10m"]
         end
 
         subgraph AISORT["🎯 AI 선별 자동화"]
-            AS1["Cognex ViDi"]
-            AS2["Keyence CV-X"]
-            AS3["SmartMore ViMo"]
-            AS4["EPSON SCARA"]
-            AS5["GSK 델타로봇"]
-            AS6["CKVision 노코드"]
+            AS1["SmartMore\nIndustryGPT"]
+            AS2["Hexagon\nML 표면결함"]
+            AS3["Cognex ViDi\n소량학습 분류"]
+            AS4["Keyence\nAI 자동학습"]
+            AS5["Mech-Mind\n3D+Mech-GPT"]
+            AS6["CKVision\n노코드 비전"]
+            AS7["LMI Gocator\n3D 등급분류"]
+            AS8["Hikrobot\nVM 플랫폼"]
+            AS9["DLCV.AI\n100장→1분 학습"]
         end
 
         subgraph VISION["👁️ 비전 선별 기술"]
-            VS1["Keyence LJ-X8000"]
-            VS2["Hikrobot MV"]
-            VS3["Basler 하이퍼스펙트럴"]
-            VS4["LMI Gocator 3D"]
-            VS5["Cognex 3D-A5000"]
-            VS6["Daheng MER"]
+            VS1["Keyence\n라인스캔 165kHz"]
+            VS2["LMI Gocator\n4K+ 3D 프로파일"]
+            VS3["OPT Machine\nLED 조명 1000+"]
+            VS4["SmartMore VN4000\nAI 스마트 카메라"]
+            VS5["Hikrobot\n51K line/s"]
+            VS6["Cognex\n3D-A5000"]
+            VS7["Basler\n하이퍼스펙트럴"]
+            VS8["Daheng\nMERCURY2"]
+            VS9["CCS Inc.\nAgri-Bio LED"]
         end
 
         subgraph AIPLC["⚙️ AI PLC 통합"]
-            AP1["Siemens S7-1200"]
-            AP2["Mitsubishi iQ-R"]
-            AP3["Inovance AC800"]
-            AP4["Delta DVP/AS"]
-            AP5["Advantech WISE"]
-            AP6["ZMotion ZMC"]
+            AP1["Siemens S7\nIOT2050 LoRaWAN"]
+            AP2["Mitsubishi\niQ-R + MELIPC"]
+            AP3["Inovance AC800\n256축 EtherCAT"]
+            AP4["Delta\nDVP/AS + DIACloud"]
+            AP5["Advantech\nAMAX + WISE-PaaS"]
+            AP6["Leisai PMC600\nIoT PLC 32축"]
+            AP7["ZMotion\nXPLC EtherCAT"]
+            AP8["Haiwell A8\n온실 IoT 실증"]
+            AP9["Kinco MK\nHMI+PLC+IoT"]
         end
 
         subgraph SMARTFARM["🌱 스마트팜 기술"]
-            SF1["Siemens 디지털트윈"]
-            SF2["Advantech Edge AI"]
-            SF3["DJI Agras T60"]
-            SF4["XAG R150"]
-            SF5["Festo 비례밸브"]
-            SF6["Keli 힘센서"]
+            SF1["Siemens\ndigiCEAd 디지털온실"]
+            SF2["Advantech\nEdge AI 26TOPS"]
+            SF3["DJI T100\n100L 방제드론"]
+            SF4["XAG R150\n자율주행 지상로봇"]
+            SF5["Festo\n묘목 파지/이식"]
+            SF6["Basler\nSWIR 내부품질"]
+            SF7["Hypersen\n6축 힘/토크센서"]
+            SF8["Sananbio\n세계최대 식물공장"]
+            SF9["Keli\n힘센서 229특허"]
         end
     end
 
@@ -132,16 +156,16 @@ graph TB
 
     subgraph TOP10["🏆 핵심 주목 기업 TOP 10"]
         direction LR
-        T1["1. Flexiv 🇨🇳\n로봇팔·그리퍼"]
+        T1["1. Flexiv 🇨🇳\n로봇팔·적응형"]
         T2["2. Siemens 🇩🇪\nAI PLC·물류·스마트팜"]
-        T3["3. Hikrobot 🇨🇳\nAMR·비전·물류"]
+        T3["3. Hikrobot 🇨🇳\nAMR·비전·물류·AI선별"]
         T4["4. Cognex 🇺🇸\nAI선별·비전"]
-        T5["5. FANUC 🇯🇵\n로봇팔"]
-        T6["6. Realman 🇨🇳\n로봇팔"]
-        T7["7. SEER 🇨🇳\nAMR"]
-        T8["8. SmartMore 🇨🇳\nAI선별·비전"]
-        T9["9. RoChU 🇨🇳\n로봇 그리퍼"]
-        T10["10. Inovance 🇨🇳\nAI PLC"]
+        T5["5. FAIRINO 🇨🇳\nIP66 로봇팔"]
+        T6["6. SEER 🇨🇳\nAMR 제어기"]
+        T7["7. SmartMore 🇨🇳\nAI선별·IndustryGPT"]
+        T8["8. SRT 🇨🇳\n소프트 그리퍼"]
+        T9["9. Geek+ 🇨🇳\nAMR·콜드체인"]
+        T10["10. Advantech 🇹🇼\nAI PLC·스마트팜"]
     end
 
     FARM --> TOP10
@@ -167,7 +191,7 @@ graph TB
     style FARM fill:#F4F6F7,stroke:#566573,color:#2C3E50
     style GRIPPER fill:#D5F5E3,stroke:#27AE60,color:#1B4F72
     style COBOT fill:#D6EAF8,stroke:#2E86C1,color:#1B4F72
-    style AMR fill:#E8DAEF,stroke:#8E44AD,color:#1B4F72
+    style AMRSEC fill:#E8DAEF,stroke:#8E44AD,color:#1B4F72
     style AILOG fill:#FDEBD0,stroke:#E67E22,color:#1B4F72
     style AISORT fill:#FCF3CF,stroke:#F1C40F,color:#1B4F72
     style VISION fill:#D1F2EB,stroke:#1ABC9C,color:#1B4F72
