@@ -1,0 +1,86 @@
+%% 2026년 2분기 매출 계획 - 성과 목표 다이어그램
+%% 실시간 복합 환경 모니터링 및 통합 제어 시스템
+
+graph TB
+    %% ===== 최상위 =====
+    TITLE["<b>2026 Q2 성과 목표</b><br/>실시간 복합 환경 모니터링<br/>및 통합 제어 시스템"]
+
+    TITLE --> G1
+    TITLE --> G2
+    TITLE --> G3
+
+    %% ===== 성과 목표 1 =====
+    G1["<b>목표 1</b><br/>IoT 복합 센서 기반<br/>실시간 환경 모니터링<br/>플랫폼 구축"]
+
+    G1 --> G1_S["<b>센서 6종+</b><br/>온도 / 습도 / CO2<br/>PAR 광량 / 토양수분·EC / 엽온"]
+    G1 --> G1_K["<b>핵심 KPI</b><br/>수집 주기 1분 이내<br/>가동률 99%+<br/>파일럿 온실 1개소"]
+    G1 --> G1_M["<b>마일스톤</b>"]
+
+    G1_M --> G1_M1["4월<br/>센서 네트워크 설계<br/>LoRa / LTE / WiFi"]
+    G1_M --> G1_M2["5월<br/>파일럿 온실 설치<br/>대시보드 v1.0"]
+    G1_M --> G1_M3["6월<br/>이상치 탐지 적용<br/>실증 보고서"]
+
+    G1 --> G1_C["<b>파트너 후보</b>"]
+    G1_C --> G1_C1["큐빅스<br/>국가표준 센서"]
+    G1_C --> G1_C2["비바엔에스<br/>잇츠스마트팜 IoT"]
+    G1_C --> G1_C3["시스트로닉스<br/>복합센서"]
+    G1_C --> G1_C4["우성하이텍<br/>환경관리 시스템"]
+    G1_C --> G1_C5["그린랩스<br/>팜모닝 플랫폼"]
+
+    %% ===== 성과 목표 2 =====
+    G2["<b>목표 2</b><br/>AI 양액·관수<br/>자동제어 시스템<br/>PoC 완료"]
+
+    G2 --> G2_S["<b>제어 대상</b><br/>EC 전기전도도<br/>pH 산도<br/>배액량 / 급액량"]
+    G2 --> G2_K["<b>핵심 KPI</b><br/>EC·pH 보정 95%+<br/>양액 낭비 30% 절감<br/>대상 작물 2종"]
+    G2 --> G2_M["<b>마일스톤</b>"]
+
+    G2_M --> G2_M1["4월<br/>EC·pH 센서 선정<br/>양액 레시피 DB"]
+    G2_M --> G2_M2["5월<br/>AI 제어 알고리즘<br/>토마토·딸기"]
+    G2_M --> G2_M3["6월<br/>파일럿 적용<br/>절감 효과 분석"]
+
+    G2 --> G2_C["<b>파트너 후보</b>"]
+    G2_C --> G2_C1["아이오크롭스<br/>ioFarm + HERMAI"]
+    G2_C --> G2_C2["이레아이에스<br/>AI 관수제어"]
+    G2_C --> G2_C3["에너틱스<br/>GS 1등급 SW"]
+    G2_C --> G2_C4["푸드쥬크박스<br/>EC 양액 자동화"]
+
+    %% ===== 성과 목표 3 =====
+    G3["<b>목표 3</b><br/>PLC 기반 통합 환경제어<br/>+ 클라우드 관제<br/>MVP 출시"]
+
+    G3 --> G3_S["<b>제어 액추에이터</b><br/>천창·측창 개폐<br/>냉난방 / 환풍<br/>CO2 공급 / 차광 커튼"]
+    G3 --> G3_K["<b>핵심 KPI</b><br/>자동화율 80%+<br/>에너지 절감 15%+<br/>응답 시간 5초 이내"]
+    G3 --> G3_M["<b>마일스톤</b>"]
+
+    G3_M --> G3_M1["4월<br/>PLC 선정<br/>I/O 설계"]
+    G3_M --> G3_M2["5월<br/>SCADA 연동<br/>클라우드 대시보드"]
+    G3_M --> G3_M3["6월<br/>통합 실증<br/>MVP 오픈"]
+
+    G3 --> G3_C["<b>파트너 후보</b>"]
+    G3_C --> G3_C1["그린플러스<br/>턴키 온실 1위"]
+    G3_C --> G3_C2["Siemens<br/>S7-1200 + MindSphere"]
+    G3_C --> G3_C3["싸이몬<br/>AI Copilot PLC"]
+    G3_C --> G3_C4["만나CEA<br/>수직농장 자동화"]
+    G3_C --> G3_C5["KT<br/>5G + AI + IoT"]
+
+    %% ===== 스타일 =====
+    classDef title fill:#1a237e,stroke:#1a237e,color:#fff,font-size:14px
+    classDef goal1 fill:#0d47a1,stroke:#0d47a1,color:#fff
+    classDef goal2 fill:#00695c,stroke:#00695c,color:#fff
+    classDef goal3 fill:#e65100,stroke:#e65100,color:#fff
+    classDef sensor fill:#e3f2fd,stroke:#1565c0,color:#1565c0
+    classDef kpi fill:#fff3e0,stroke:#e65100,color:#bf360c
+    classDef milestone fill:#f3e5f5,stroke:#6a1b9a,color:#4a148c
+    classDef step fill:#fce4ec,stroke:#c62828,color:#b71c1c
+    classDef partner fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20
+    classDef company fill:#f1f8e9,stroke:#558b2f,color:#33691e
+
+    class TITLE title
+    class G1 goal1
+    class G2 goal2
+    class G3 goal3
+    class G1_S,G2_S,G3_S sensor
+    class G1_K,G2_K,G3_K kpi
+    class G1_M,G2_M,G3_M milestone
+    class G1_M1,G1_M2,G1_M3,G2_M1,G2_M2,G2_M3,G3_M1,G3_M2,G3_M3 step
+    class G1_C,G2_C,G3_C partner
+    class G1_C1,G1_C2,G1_C3,G1_C4,G1_C5,G2_C1,G2_C2,G2_C3,G2_C4,G3_C1,G3_C2,G3_C3,G3_C4,G3_C5 company
